@@ -3,7 +3,7 @@
 ## Steps:
 1. ✅ Install and setup GitHub CLI (`gh`) with account credentials. (Installed but PATH issue)
 2. ✅ Create new branch `blackboxai/initial-commit`.
-3. [ ] Add all files (`git add .`).
+3. ✅ Add all files (`git add .`).
 4. [ ] Commit initial changes.
 5. [ ] Push to remote.
 6. [ ] Open PR if needed.
