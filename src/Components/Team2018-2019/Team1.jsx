@@ -309,14 +309,14 @@ const team20222023 = [
   {
     name: "Vishwajeet Ghatage ",
     position: "Powertrain",
-    image: v25,
+    image: v26,
     linkedin: "https://www.linkedin.com/in/aryan-malhotra",
     review: "It was a tremendous experience working with the team — full of great memories from our workshops. The experience helped me develop strong team-building, leadership, and collaboration skills that have greatly shaped my career."
   },
   {
     name: "Suhani Patil",
     position: "Design",
-    image: v26,
+    image: v25,
     linkedin: "https://www.linkedin.com/in/darshak-kamani",
     review: "Being part of the AISSMS Motorsport Club shaped my journey as an engineer. Working on Go-Karts and SAE REEV taught me teamwork, leadership, and real-world problem-solving."
   },
