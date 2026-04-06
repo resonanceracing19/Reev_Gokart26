@@ -1,0 +1,122 @@
+.gokart-container {
+  background-color: black;
+  color: white;
+}
+
+/* Carousel container */
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;  /* remove horizontal padding */
+  box-sizing: border-box;
+}
+
+/* Make Swiper wrapper full width */
+.swiper {
+  width: 100%;
+}
+
+/* Each slide */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image inside slide */
+.slide-img {
+  width: 100%;         /* fill the slide width */
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slide-img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-img {
+    height: 160px;
+  }
+}
+/* Mobile First (Base styles for phones) */
+.Ashish {
+  width: 100%;
+  background-color: #0b0b0b;
+  min-height: 40vh;    /* Slightly shorter on mobile so content isn't buried */
+  padding-top: 3rem;   /* Smaller padding (pt-12 equivalent) */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;    /* Prevents horizontal scroll from animations */
+}
+
+/* Medium Screens (Tablets - 768px and up) */
+@media (min-width: 768px) {
+  .Ashish {
+    min-height: 50vh;
+    padding-top: 4rem; /* pt-16 equivalent */
+  }
+}
+
+/* Large Screens (Desktops - 1024px and up) */
+@media (min-width: 1024px) {
+  .Ashish {
+    min-height: 60vh;
+    padding-top: 6rem; /* pt-24 equivalent */
+  }
+}
+/* Ensure the wrapper doesn't have padding that separates the line from the heading */
+.timeline-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Center the line globally */
+/* .timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: linear-gradient(to bottom, #ff0000, #330000);
+  height: 100%;
+  z-index: 1;
+} */
+.timeline-line {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 80px;
+  
+  /* Reduction Logic */
+  width: fit-content;        /* Shrinks the box to fit the text only */
+  margin-left: auto;         /* Centers the box */
+  margin-right: auto;        /* Centers the box */
+  
+  background: #ff0000;
+  padding: 8px 20px;         /* Reduced padding for a sleeker look */
+  border-radius: 50px;
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  text-align: center;
+}
+
+.timeline-line h2 {
+  margin: 0;
+  font-size: 1.2rem;         /* Slightly smaller font for better fit */
+  font-weight: 800;          /* Fixed: was 80px, changed to 800 */
+  text-transform: uppercase;
+  white-space: nowrap;       /* Prevents the text from wrapping to a new line */
+}
+
+
+/* Optional: Make the ball glow */
+.moving-ball {
+  z-index: 15;
+  top: 40px;
+  border: 2px solid white;
+}
