@@ -8,7 +8,7 @@ import Team1 from "../../Components/Team2018-2019/Team1.jsx";
 // Assets
 
 import l3 from "../../assets/image 11.jpeg";
-import l4 from "../../assets/image 7.jpeg";
+import l4 from "../../assets/image5.jpeg";
 import l1 from "../../assets/t1.jpeg";
 import l2 from "../../assets/image 14.jpeg";
 import v1 from "../../assets/Picture3.jpg";
@@ -96,12 +96,12 @@ const Achievements = () => {
                 >
                   Morphines *Motorsports Series – Season 1{" "}
                 </span></b><br />
-                •	All India rank 2🏆<br />
-                🥇Best Endurance<br />
-🥇Best Ergonomics<br />
-🥇Best Design Presentation <br />
-🥇Skidpad - Runner up <br />
-🥇Time Trials - Runner up<br />
+                •	All India rank 1<br />
+                •Best Endurance<br />
+                •Best Ergonomics<br />
+                •Best Design Presentation <br />
+                •Skidpad - Runner up <br />
+                •Time Trials - Runner up<br />
 
 
         
@@ -165,12 +165,12 @@ const Achievements = () => {
                 >
                   Edgeline championship season 2{" "}
                 </span></b><br />
-                •	All India rank 2🏆<br />
-                🥇Best Endurance
-🥇Best Innovation <br />
-🥇Best Design Presentation <br />
-🥇Best Cost Presentation <br />
-🥇Best Female Candidate<br />
+                •	All India rank 2<br />
+                •Best Endurance
+                •Best Innovation <br />
+                •Best Design Presentation <br />
+                •Best Cost Presentation <br />
+                •Best Female Candidate<br />
 
         
 
