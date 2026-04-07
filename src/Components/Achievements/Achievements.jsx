@@ -8,7 +8,7 @@ import Team1 from "../../Components/Team2018-2019/Team1.jsx";
 // Assets
 
 import l3 from "../../assets/image 11.jpeg";
-import l4 from "../../assets/image5.jpeg";
+import l4 from "../../assets/Ac.jpeg";
 import l1 from "../../assets/t1.jpeg";
 import l2 from "../../assets/image 14.jpeg";
 import v1 from "../../assets/Picture3.jpg";
