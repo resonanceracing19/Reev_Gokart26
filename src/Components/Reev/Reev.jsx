@@ -21,7 +21,7 @@ import M15 from "../../assets/M15.jpeg";
 
 
 
-import gokartImg from "../../assets/M10.jpeg";
+import gokartImg from "../../assets/M9.jpeg";
 const secondCarouselData = [{ img: M1 },{ img: M9 }, { img: M14 }, { img: M2 }, { img: M3 }, { img: M8 }, { img: M5 }, { img: M6 }, { img: M7 }, { img: M10 },{ img: M1 },  { img: M15 }];
 export default function GoKart() {
   return (
