@@ -176,7 +176,7 @@ function Timeline() {
   return (
     <section ref={elementRef} className="timeline-container">
       <div className="timeline-header-box ">
-        <h2><b>2022 Club Inauguration</b></h2>
+        <h2><b>Team Legacy</b></h2>
       </div>
 
       {/* The Vertical Line */}
