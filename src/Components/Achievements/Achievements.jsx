@@ -140,7 +140,7 @@ const Achievements = () => {
                 <img
                   src={l3}
                   alt="GoKart"
-                  className="w-full h-78 object-cover"
+                  className="w-full h-64 object-cover"
                 />
               </div>
 
@@ -149,7 +149,7 @@ const Achievements = () => {
                 <img
                   src={l4}
                   alt="GoKart"
-                  className="w-full h-78 object-cover"
+                  className="w-full h-64 object-cover"
                 />
               </div>
             </div>
