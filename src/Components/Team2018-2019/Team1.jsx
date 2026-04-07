@@ -41,9 +41,9 @@ import v31 from "../../assets/Prathamesh.jpg";
 import v32 from "../../assets/Tanaya.jpg";
 import v33 from "../../assets/Ekta.jpg";
 import v34 from "../../assets/Gaurang.jpg";
-import v36 from "../../assets/ar.jpeg;
-import v37 from "../../assets/su.jpeg;
-import v38 from "../../assets/sp.png;
+// import v36 from "../../assets/ar.jpeg;
+// import v37 from "../../assets/su.jpeg;
+// import v38 from "../../assets/sp.png;
 import MoviesCarousel from "../MoviesCarousel/MoviesCarousel.jsx";
 import Footer from "../Footer/Footer.jsx";
 
@@ -138,14 +138,14 @@ const team20252026 = [
   {
     name: "Sureshkumar Ravindra Kagne ",
     position: "Electrical Powertrain",
-    image: v37,
+    image: v4,
     linkedin: "#",
     review: "My experience is so good like I understand what real engineering is and also how to do research about new concepts. There is lots of learning in workshop which helps to build my personality even better."
   },
   {
     name: "SPANDAN SACHIN INGAWALE ",
     position: "Electrical Powertrain",
-    image: v38,
+    image: v4,
     linkedin: "https://www.linkedin.com/in/spandan-ingawale-8794a9395?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     review: "My experience is so good like I understand what real engineering is and also how to do research about new concepts. There is lots of learning in workshop which helps to build my personality even better."
   },
@@ -211,7 +211,7 @@ const team20252026 = [
    {
     name: "Arnav Shinde ",
     position: "Brakes",
-    image: v36,
+    image: v4,
     linkedin: "https://www.linkedin.com/in/arnav-shinde-38011a385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
