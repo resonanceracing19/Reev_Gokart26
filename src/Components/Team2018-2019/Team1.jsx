@@ -276,14 +276,14 @@ const team20232024 = [
     name: "Kaushal More ",
     position: "(CAPTAIN)",
     image: v24,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/kaushal-more-a36446224?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Aayush Dhokne",
     position: "(Vice Captain)",
     image: v27,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/aayush-dhokne-65b47a213?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Team helps me in my overall growth not just technical but non technical skills I gained in team helps me in my professional carrier."
   },
   {
@@ -326,7 +326,7 @@ const team20232024 = [
     name: "Tanaya Sabade",
     position: "Design",
     image: v32,
-    linkedin: "https://www.linkedin.com/in/darshak-kamani",
+    linkedin: "https://www.linkedin.com/in/tanaya-sabade-360029291?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the AISSMS Motorsport Club shaped my journey as an engineer. Working on Go-Karts and SAE REEV taught me teamwork, leadership, and real-world problem-solving."
   },
 
@@ -334,7 +334,7 @@ const team20232024 = [
     name: "Ekta Patbhaje",
     position: "Powertrain",
     image: v33,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/ekta-patbhaje-b43050291?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Joining Resonance Racing’s Go-kart & Reev team as a powertrain engineer was a hands-on adventure, taking me from learning to designing, simulating, fabricating, and rigorously testing all our “khurafati” ideas."
   },
 
@@ -342,7 +342,7 @@ const team20232024 = [
     name: "Manoj Gore",
     position: "Vehicle Dynamics",
     image: v30,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/manoj-gore-674907268?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the Resonance Racing team is most transformative experiences of my engineering. It provided me with a deep, practical understanding of how theoretical vehicle dynamics translate into real-world performance."
   },
 
@@ -350,7 +350,7 @@ const team20232024 = [
     name: "Gaurang Gujarthi",
     position: "Brakes",
     image: v34,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/gaurang-gujarathi-ba7375206?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the AISSMS Motorsport Club shaped my journey as an engineer. Working on Go-Karts and SAE REEV taught me teamwork, leadership, and real-world problem-solving."
   },
   {
@@ -364,7 +364,7 @@ const team20232024 = [
     name: "Suhani Patil",
     position: "Design",
     image: v25,
-    linkedin: "https://www.linkedin.com/in/darshak-kamani",
+    linkedin: "https://www.linkedin.com/in/suhani-patil-110208225?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the AISSMS Motorsport Club shaped my journey as an engineer. Working on Go-Karts and SAE REEV taught me teamwork, leadership, and real-world problem-solving."
   },
   {
@@ -389,77 +389,77 @@ const team20222023 = [
     name: "Shubham Landage",
     position: "(CAPTAIN)",
     image: v22,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/shubham-landage-96b8711b3?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of Resonance Racing was a transformative experience that strengthened technical skills while teaching leadership, teamwork, and perseverance. Through challenges and successes, problem-solving ability."
   },
   {
     name: "Samarjeet Aherrao",
     position: "(Vice Captain)",
     image: v23,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/samarjeet-aherrao?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "It was the best. Designing and Building the Gokart taught me all the skills to become an automotive designer."
   },
   {
     name: "Kaushal More",
     position: "DESIGN",
     image: v24,
-    linkedin: "https://www.linkedin.com/in/omkar-tigote-a207892a8/",
+    linkedin: "https://www.linkedin.com/in/kaushal-more-a36446224?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being a part of Team Resonance was one of the best experiences during my college days. It gave me a real taste of teamwork, technical challenges, and management responsibilities. "
   },
   {
     name: "Vishwajeet Ghatage ",
     position: "Powertrain",
     image: v26,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/vishvajeet-ghatage?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "It was a tremendous experience working with the team — full of great memories from our workshops. The experience helped me develop strong team-building, leadership, and collaboration skills that have greatly shaped my career."
   },
   {
     name: "Suhani Patil",
     position: "Design",
     image: v25,
-    linkedin: "https://www.linkedin.com/in/darshak-kamani",
+    linkedin: "https://www.linkedin.com/in/suhani-patil-110208225?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the AISSMS Motorsport Club shaped my journey as an engineer. Working on Go-Karts and SAE REEV taught me teamwork, leadership, and real-world problem-solving."
   },
   {
     name: "Aayush Dhokne",
     position: "Powertrain",
     image: v27,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/aayush-dhokne-65b47a213?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Team helps me in my overall growth not just technical but non technical skills I gained in team helps me in my professional carrier."
   },
   {
     name: "Sahil Pawar",
     position: "Powertrain",
     image: v28,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/sahilpawar-mechanical?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Joining Resonance Racing’s Go-kart & Reev team as a powertrain engineer was a hands-on adventure, taking me from learning to designing, simulating, fabricating, and rigorously testing all our “khurafati” ideas."
   },
   {
     name: "Shreeyash Chandgude",
     position: "Powertrain",
     image: v29,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/shreeyash-chandgude-407aa115a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being a part of the Resonance Racing Club as a Powertrain Engineer. I actively participated in REEV and Go-Kart events, where I got the opportunity to apply my academic knowledge to real-world engineering challenges.  "
   },
   {
     name: "Manoj Gore",
     position: "Vehicle Dynamics",
     image: v30,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/manoj-gore-674907268?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the Resonance Racing team is most transformative experiences of my engineering. It provided me with a deep, practical understanding of how theoretical vehicle dynamics translate into real-world performance."
   },
   {
-    name: "Parag Dhamane",
+    name: "Parag Dhamne",
     position: "Vehicle Dynamics",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/parag-dhamne-6538b8228?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the Resonance Racing Go-kart & REEV team as a member of the Steering and Vehicle Dynamics department was a highly enriching experience. It provided me with practical exposure to design, analysis, and teamwork beyond classroom learning."
   },
   {
     name: "Gaurang Gujarthi",
     position: "Brakes",
     image: 34,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/gaurang-gujarathi-ba7375206?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the AISSMS Motorsport Club shaped my journey as an engineer. Working on Go-Karts and SAE REEV taught me teamwork, leadership, and real-world problem-solving."
   },
 
