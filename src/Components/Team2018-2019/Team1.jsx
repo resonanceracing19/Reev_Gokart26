@@ -59,56 +59,56 @@ const team20252026 = [
     name: "Tanaya Otari ",
     position: "(Vice Captain)",
     image: v13,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/tanaya-otari-760606290?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Onkar Padale  ",
     position: "(DRIVER)",
     image: v18,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/onkar-padale-873291223?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle"
   },
   {
     name: "Alok Vishwakarma",
     position: "Design",
     image: v3,
-    linkedin: "https://www.linkedin.com/in/darshak-kamani",
+    linkedin: "https://www.linkedin.com/in/alok-kumar-vishwakarma-521062254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     review: "I have learned a lot about motorsports, manufacturing, machining, design and analysis software, team building, teamwork, etc."
   },
   {
     name: "Shreya Deshmukh",
     position: "Design",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/shreya-deshmukh-377545384?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     review: "We focused on reducing the weight of the chassis while maintaining structural integrity."
   },
   {
     name: "Anurag Kedar",
     position: "Design",
     image: v21,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/anurag-kedar-0502461b1?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "The integration of our custom BMS was a breakthrough for the team's performance."
   },
   {
     name: "Sakshi Patil",
     position: "Design",
     image: v9,
-    linkedin: "https://www.linkedin.com/in/priya-sharma",
+    linkedin: "https://www.linkedin.com/in/sakshi-patil-886141378?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "I learned various technical skills and hands on experience"
   },
   {
     name: "Shivani Patankar",
     position: "Design",
     image: v10,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/shivani-patankar-4b2273378?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     review: " I learned practical engineering skills, teamwork, and how to work under competition pressure.This experience improved my technical knowledge and helped shape my career in the electric vehicle field."
   },
   {
     name: " Aditi Jadhav",
     position: "Design",
     image: v5,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/aditi-jadhav-458065375?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     review: "I learnt to make detailed research on everything so it is  improving my technical knowledge which is very useful for academics and future also .Also gained the skills like problem solving and how to work in team ."
   },
 
@@ -116,21 +116,21 @@ const team20252026 = [
     name: "Kadambari Ovhal",
     position: "Design",
     image: v7,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/kadambari-ovhal-8b99a82aa?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "I have learned a lot about motorsports, manufacturing, machining, design and analysis software, team building, teamwork, etc."
   },
   {
     name: "Aditya Waghe",
     position: "Design",
     image: v6,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/aditya-waghe-63514b384?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     review: "My experience is so good like I understand what real engineering is and also how to do research about new concepts. There is lots of learning in workshop which helps to build my personality even better."
   },
   {
     name: "Aadesh Mehta ",
     position: "Design",
     image: v4,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/aadesh-mehta-91aa08342?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     review: "My experience is so good like I understand what real engineering is and also how to do research about new concepts. There is lots of learning in workshop which helps to build my personality even better."
   },
 
@@ -138,63 +138,57 @@ const team20252026 = [
     name: "Nandita Mophare ",
     position: "Vehicle Dynamics",
     image: v8,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/nandita-mophare-187a6a383?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
+  
   {
-    name: "Sarthak Wankar",
-    position: "Vehicle Dynamics",
-    image: v11,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
-    review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle"
-  },
-  {
-    name: "Pritviraj Kapale ",
+    name: "Pruthviraj Khapale ",
     position: "Vehicle Dynamics",
     image: v12,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "#",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Vinit Raul ",
     position: "Vehicle Dynamics",
     image: v14,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/vinit-raul-7b0243258?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Prashant Mandora ",
     position: "M Powertrain",
     image: v19,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "#",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Ketan Sonawane ",
     position: "M Powertrain",
     image: v20,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/ketan-sonawane-774706285?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Harshvardhan Ghatge ",
     position: "M Powertrain",
     image: v15,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/harsvhardhan-ghatge-935423350?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Vihan Jange ",
     position: "M Powertrain",
     image: v16,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/vihan-jange-b736a4383?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Aayush Whaval ",
     position: "M Powertrain",
     image: v17,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/aayush-whawal-6aa06b384?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
 
@@ -203,51 +197,51 @@ const team20252026 = [
 const team20242025 = [
   {
     name: "Ketan Sonawane ",
-    position: "(Team Captain)",
+    position: "M Powertrain",
     image: v20,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/ketan-sonawane-774706285?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Tanaya Otari ",
     position: "(Vice Captain)",
     image: v13,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/tanaya-otari-760606290?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Onkar Padale  ",
     position: "(DRIVER)",
     image: v18,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/onkar-padale-873291223?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle"
   },
   {
     name: "Ekta Patbhaje",
     position: "Powertrain",
     image: v33,
-    linkedin: "https://www.linkedin.com/in/sneha-patil",
+    linkedin: "https://www.linkedin.com/in/ekta-patbhaje-b43050291?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Joining Resonance Racing’s Go-kart & Reev team as a powertrain engineer was a hands-on adventure, taking me from learning to designing, simulating, fabricating, and rigorously testing all our “khurafati” ideas."
   },
   {
     name: "Tanaya Sabade",
     position: "Design",
     image: v32,
-    linkedin: "https://www.linkedin.com/in/darshak-kamani",
+    linkedin: "https://www.linkedin.com/in/tanaya-sabade-360029291?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the AISSMS Motorsport Club shaped my journey as an engineer. Working on Go-Karts and SAE REEV taught me teamwork, leadership, and real-world problem-solving."
   },
   {
     name: "Prathamesh Malgude ",
     position: "Powertrain",
     image: v31,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "#",
     review: "It was a tremendous experience working with the team — full of great memories from our workshops. The experience helped me develop strong team-building, leadership, and collaboration skills that have greatly shaped my career."
   },
   {
     name: "Prashant Mandora ",
     position: "M Powertrain",
     image: v19,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "#",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
@@ -261,14 +255,14 @@ const team20242025 = [
     name: "Vinit Raul ",
     position: "Vehicle Dynamics",
     image: v14,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/vinit-raul-7b0243258?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Anurag Kedar",
     position: "Design",
     image: v21,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/anurag-kedar-0502461b1?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "The integration of our custom BMS was a breakthrough for the team's performance."
   },
   
@@ -294,9 +288,9 @@ const team20232024 = [
   },
   {
     name: "Onkar Padale  ",
-    position: "(DRIVER)",
+    position: "Vehicle Dynamics",
     image: v18,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/onkar-padale-873291223?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle"
   },
 
@@ -304,28 +298,28 @@ const team20232024 = [
     name: "Ketan Sonawane ",
     position: "M Powertrain",
     image: v20,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/ketan-sonawane-774706285?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Prashant Mandora ",
     position: "M Powertrain",
     image: v19,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "#",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
     name: "Prathamesh Malgude ",
     position: "Powertrain",
     image: v31,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "#",
     review: "It was a tremendous experience working with the team — full of great memories from our workshops. The experience helped me develop strong team-building, leadership, and collaboration skills that have greatly shaped my career."
   },
   {
     name: "Tanaya Otari ",
-    position: "Brakes",
+    position: "Break",
     image: v13,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/tanaya-otari-760606290?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
@@ -363,7 +357,7 @@ const team20232024 = [
     name: "Vinit Raul ",
     position: "Vehicle Dynamics",
     image: v14,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/vinit-raul-7b0243258?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
   {
@@ -384,10 +378,9 @@ const team20232024 = [
     name: "Anurag Kedar",
     position: "Design",
     image: v21,
-    linkedin: "https://www.linkedin.com/in/aryan-malhotra",
+    linkedin: "https://www.linkedin.com/in/anurag-kedar-0502461b1?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "The integration of our custom BMS was a breakthrough for the team's performance."
   },
-  
 
 
 ];
