@@ -6,7 +6,7 @@ import Achievements from "./Components/Achievements/Achievements";
 import logo from "./assets/logo.png";
 import applogo from "./assets/gears-138199.gif";
 import About from "./Components/Gokart/Gokart";
-import Joinus from "./Components/St/Stairs.jsx";
+import Joinus from "./Components/St/Stairs.jsx";``
 
 import Reev from "./Components/Reev/Reev";
 import Team1 from "./Components/Team2018-2019/Team1";
