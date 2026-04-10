@@ -1,124 +1,244 @@
-import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import Nav from "./Components/Nav/Nav";
-import Index from "./Components/Page/Index";
-import Achievements from "./Components/Achievements/Achievements";
-import logo from "./assets/logo.png";
-import applogo from "./assets/gears-138199.gif";
-import About from "./Components/Gokart/Gokart";
-import Joinus from "./Components/St/Stairs.jsx";``
+import React, { useState, useEffect, useRef } from "react";
+import {
+  Users,
+  MessageCircle,
+  Mail,
+  Phone,
+  User,
+  Briefcase,
+  ChevronRight,
+} from "lucide-react";
+import Footer from "../Footer/Footer.jsx";
 
-import Reev from "./Components/Reev/Reev";
-import Team1 from "./Components/Team2018-2019/Team1";
-import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
-import Team1C from "./Components/Team2018-2019/Team1c";
+const Stairs = () => {
+  // External Links
+  const LINKS = {
+    form: "https://forms.google.com/your-form-link",
+    whatsapp: "https://chat.whatsapp.com/your-community-link",
+  };
 
+  // HERO animation state
+  const [heroAnimate, setHeroAnimate] = useState(false);
+  const heroHeadingRef = useRef(null);
 
-function App() {
+  // Leadership animation state
+  const [leadershipInView, setLeadershipInView] = useState(false);
+  const leadershipRef = useRef(null);
 
-  // Custom cursor logic - works on all routes
+  // ================= HERO OBSERVER =================
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHeroAnimate(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
 
-    // Detect mobile device
-    const isMobileDevice = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (heroHeadingRef.current) {
+      observer.observe(heroHeadingRef.current);
+    }
 
-    // Only add custom cursor on desktop
-    if (isMobileDevice) return;
-
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    document.body.appendChild(cursor);
-    document.body.classList.add('custom-cursor-active');
-
-    const moveCursor = (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    };
-
-    const addHoverEffect = () => {
-      cursor.classList.add('hover');
-    };
-
-    const removeHoverEffect = () => {
-      cursor.classList.remove('hover');
-    };
-
-    const hideCursor = () => {
-      cursor.style.opacity = '0';
-    };
-
-    const showCursor = () => {
-      cursor.style.opacity = '1';
-    };
-
-    document.addEventListener('mousemove', moveCursor);
-    document.addEventListener('mouseleave', hideCursor);
-    document.addEventListener('mouseenter', showCursor);
-
-    // Add hover effects to interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, [role="button"], .cursor-pointer');
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', addHoverEffect);
-      el.addEventListener('mouseleave', removeHoverEffect);
-    });
-
-    // Re-query interactive elements when route changes
-    const observer = new MutationObserver(() => {
-      const newInteractiveElements = document.querySelectorAll('a, button, [role="button"], .cursor-pointer');
-      newInteractiveElements.forEach(el => {
-        el.addEventListener('mouseenter', addHoverEffect);
-        el.addEventListener('mouseleave', removeHoverEffect);
-      });
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    return () => {
-      document.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('mouseleave', hideCursor);
-      document.removeEventListener('mouseenter', showCursor);
-      interactiveElements.forEach(el => {
-        el.removeEventListener('mouseenter', addHoverEffect);
-        el.removeEventListener('mouseleave', removeHoverEffect);
-      });
-      observer.disconnect();
-      if (cursor && cursor.parentNode) {
-        cursor.parentNode.removeChild(cursor);
-      }
-      document.body.classList.remove('custom-cursor-active');
-    };
+    return () => observer.disconnect();
   }, []);
 
+  // ================= LEADERSHIP OBSERVER =================
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLeadershipInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (leadershipRef.current) {
+      observer.observe(leadershipRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Leadership Data
+  const LEADERS = [
+    {
+      role: "Captain",
+      name: "Omkar Tigote",
+      phone: "+91 1234567899",
+      email: "captain@gmail.com",
+      theme: {
+        border: "border-white/10",
+        bg: "bg-red-50",
+        text: "text-red-600",
+        badge: "bg-red-600 text-white",
+      },
+    },
+    {
+      role: "Vice Captain",
+      name: "Tanaya Otari",
+      phone: "+91 9876543211",
+      email: "vicecaptain@gmail.com",
+      theme: {
+        border: "border-white/10",
+        bg: "bg-gray-100",
+        text: "text-black",
+        badge: "bg-black text-white",
+      },
+    },
+  ];
 
   return (
-    <>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/achievements" element={<Achievements />} />
-        <Route
-          path="/gokart"
-          element={
-            <main className="w-full bg-[#101010] min-h-screen pt-20 lg:pt-24" style={{ position: 'relative', zIndex: 1 }}>
-              <About />
+    <div className="min-h-screen bg-[#101010] text-slate-900 font-sans">
 
-            </main>
-          }
-        />
-        <Route path="/team1" element={<Team1 />} />
-        <Route path="/reev" element={<Reev />} />
-        <Route
-          path="/team1c"
-          element={
-            <main className="w-full bg-[#101010] min-h-screen pt-24">
-              <Team1C />
-            </main>
-          }
-        />
-      <Route path="/Stairs" element={<Joinus />} />
-      </Routes>
-    </>
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative py-24 px-4 bg-[#101010] overflow-hidden">
+        {/* relative py-24 px-4 bg-gradient-to-br from-black via-zinc-900 to-black overflow-hidden */}
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+
+          <span className="inline-block mt-9 mb-6 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-white bg-white/10 border border-white/20 rounded-full backdrop-blur">
+            Join the Legacy
+          </span>
+          <br />
+
+          {/* Animated Heading */}
+          <h2
+            ref={heroHeadingRef}
+            className={`text-center mt-6 mb-4 learn-mo-line ${
+              heroAnimate ? "active" : ""
+            }`}
+          >
+            <span className="font-bold text-xl sm:text-2xl md:text-3xl block text-white">
+              We Are Recruiting
+            </span>
+          </h2>
+
+          <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+            text of resonance
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+
+            <a
+              href={LINKS.form}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-2 px-8 py-4 bg-white text-red-700 rounded-xl font-bold text-lg shadow-xl hover:bg-gray-100 hover:-translate-y-1 transition"
+            >
+              <Briefcase className="w-5 h-5" />
+              Join Us
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition" />
+            </a>
+
+            <a
+              href={LINKS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-8 py-4 bg-black text-white rounded-xl font-bold text-lg shadow-xl border border-red-600/30 hover:bg-zinc-900 hover:-translate-y-1 transition"
+            >
+              <MessageCircle className="w-5 h-5 text-green-500" />
+              WhatsApp Community
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ================= LEADERSHIP SECTION ================= */}
+      <section
+        ref={leadershipRef}
+        className="py-20 px-4 max-w-6xl mx-auto"
+      >
+
+        <div className="text-center mb-16">
+
+          <h2 className={`learn-mo-line ${leadershipInView ? "active" : ""}`}>
+            <span className="font-bold text-xl sm:text-2xl md:text-3xl block text-white">
+              Current Leadership
+            </span>
+          </h2>
+
+          <div className="" />
+
+          <p className="mt-6 text-gray-400 max-w-lg mx-auto">
+            Have questions? Reach out to our Captain or Vice Captain directly.
+          </p>
+
+        </div>
+
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 gap-10">
+
+          {LEADERS.map((leader, index) => (
+            <div
+              key={index}
+              className={`relative flex flex-col sm:flex-row items-center gap-6 p-8 rounded-3xl shadow-xl border-t-8 transition-all duration-500 ease-out
+              ${
+                leadershipInView
+                  ? "bg-white/10 hover:bg-black hover:scale-105 "
+                  : "bg-white/10"
+              }
+              ${leader.theme.border}`}
+            >
+
+              {/* Avatar */}
+              <div
+                className={`w-28 h-28 flex items-center justify-center rounded-2xl ${leader.theme.bg}`}
+              >
+                <User className={`w-14 h-14 ${leader.theme.text}`} />
+              </div>
+
+              {/* Info */}
+              <div className="flex-1 space-y-4">
+
+                <span className={`text-xs font-bold uppercase px-3 py-1 rounded-full ${leader.theme.badge}`}>
+                  {leader.role}
+                </span>
+
+                <h3 className="text-3xl font-bold text-white">
+                  {leader.name}
+                </h3>
+
+                <div className="space-y-3">
+
+                  <a
+                    href={`tel:${leader.phone}`}
+                    className="flex items-center gap-3 text-gray-300 hover:text-red-400 transition"
+                  >
+                    <Phone className="w-4 h-4" />
+                    {leader.phone}
+                  </a>
+
+                  <a
+                    href={`mailto:${leader.email}`}
+                    className="flex items-center gap-3 text-gray-300 hover:text-red-400 transition"
+                  >
+                    <Mail className="w-4 h-4" />
+                    {leader.email}
+                  </a>
+
+                </div>
+
+              </div>
+
+              <Users className="absolute -bottom-6 -right-6 w-40 h-40 opacity-5 rotate-12 pointer-events-none" />
+
+            </div>
+          ))}
+
+        </div>
+      </section>
+
+      {/* ================= FOOTER ================= */}
+      <Footer />
+
+    </div>
   );
-}
+};
 
-export default App;
+export default Stairs;
