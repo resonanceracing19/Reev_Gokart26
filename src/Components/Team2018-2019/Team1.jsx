@@ -513,19 +513,49 @@ const team20222023 = [
 const Team1 = () => {
   const [animate, setAnimate] = useState(false);
 
- useEffect(() => {
-  const devSection = document.getElementById("developers-section");
+useEffect(() => {
+  setAnimate(true);
 
-  if (!devSection) {
-    alert("ERROR: Developers section missing!");
+  const main = document.querySelector("main");
+
+ 
+  if (!main) {
+    alert("ERROR: Main container missing!");
     return;
   }
 
-  const main = document.querySelector("main");
+  const devSection = main.querySelector("#developers-section");
+
+  
+  if (!devSection) {
+    alert("ERROR: Developers section has been removed!");
+    return;
+  }
+
   const sections = main.querySelectorAll("section");
 
+  
+  if (sections.length < 2) {
+    alert("ERROR: Page structure is broken!");
+    return;
+  }
+
+  
   if (sections[1] !== devSection) {
     alert("ERROR: Developers section must be at the top!");
+    return;
+  }
+
+ 
+  if (devSection.id !== "developers-section") {
+    alert("ERROR: Developers section ID has been modified!");
+    return;
+  }
+
+  
+  if (!devSection.innerHTML.trim()) {
+    alert("ERROR: Developers section content missing!");
+    return;
   }
 
 }, []);
