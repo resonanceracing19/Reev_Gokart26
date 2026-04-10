@@ -2,12 +2,11 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import AnmolCarousel from "../../Components/Carousel/Carousel.jsx";
 import "../../Components/Team2018-2019/Team1.css"
-import Team1c from "./Team1c.jsx";
-import Team1cm from "./Team1cm.jsx";
-import Team1dm from "./Team1dm.jsx";
+import M3 from "../../assets/Sanika.jpg";
+import M4 from "../../assets/Anmol.png";
 // Assets
 import v1 from "../../assets/v1.jpg";
-
+import { FaLinkedin } from "react-icons/fa";  
 import v2 from "../../assets/Picture2.jpg";
 import v3 from "../../assets/Alok Vishwakarma.jpg";
 import v4 from "../../assets/Aadesh Mehta.jpg";
@@ -46,6 +45,23 @@ import v37 from "../../assets/su.jpeg";
 import v38 from "../../assets/sp.png";
 import MoviesCarousel from "../MoviesCarousel/MoviesCarousel.jsx";
 import Footer from "../Footer/Footer.jsx";
+const teamdevloper = [
+  {
+    name: "Anmol Gour",
+    position: "Web Developer(Computer Science)",
+    image: M4,
+    linkedin: "https://www.linkedin.com/in/anmol-gour-4455a6305/",
+    review: "Lead the design and development of the official website for Resonance Racing REEV, focusing on modern UI/UX, responsiveness, and performance optimization.Managed core development, website architecture, and deployment, ensuring a seamless and engaging user experience across all devices."
+  },
+  {
+    name: "Sanika Thorat",
+    position: "Web Developer(Computer Science)",
+    image: M3,
+    linkedin: "https://www.linkedin.com/in/sanika-thorat-07b114287/",
+    review: "Assisted in the development of the official website by contributing to UI implementation, content structuring, and testing.Supported in improving responsiveness and maintaining consistency across different sections of the website."
+  },
+
+]
 
 const team20252026 = [
 
@@ -157,7 +173,7 @@ const team20252026 = [
     linkedin: "https://www.linkedin.com/in/nandita-mophare-187a6a383?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
-  
+
   {
     name: "Pruthviraj Khapale ",
     position: "Vehicle Dynamics",
@@ -165,7 +181,7 @@ const team20252026 = [
     linkedin: "#",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
-  
+
   {
     name: "Prashant Mandora ",
     position: "M Powertrain",
@@ -208,7 +224,7 @@ const team20252026 = [
     linkedin: "https://www.linkedin.com/in/vinit-raul-7b0243258?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
-   {
+  {
     name: "Arnav Shinde ",
     position: "Brakes",
     image: v4,
@@ -282,7 +298,7 @@ const team20242025 = [
     linkedin: "https://www.linkedin.com/in/anurag-kedar-0502461b1?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "The integration of our custom BMS was a breakthrough for the team's performance."
   },
-  
+
   {
     name: "Vinit Raul ",
     position: "Brakes",
@@ -290,9 +306,9 @@ const team20242025 = [
     linkedin: "https://www.linkedin.com/in/vinit-raul-7b0243258?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
-  
-  
- 
+
+
+
 
 ];
 
@@ -347,7 +363,7 @@ const team20232024 = [
     linkedin: "https://www.linkedin.com/in/tanaya-sabade-360029291?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the AISSMS Motorsport Club shaped my journey as an engineer. Working on Go-Karts and SAE REEV taught me teamwork, leadership, and real-world problem-solving."
   },
-  
+
 
   {
     name: "Ekta Patbhaje",
@@ -371,7 +387,7 @@ const team20232024 = [
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
 
-  
+
 
   {
     name: "Gaurang Gujarthi",
@@ -447,7 +463,7 @@ const team20222023 = [
     linkedin: "https://www.linkedin.com/in/vishvajeet-ghatage?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "It was a tremendous experience working with the team — full of great memories from our workshops. The experience helped me develop strong team-building, leadership, and collaboration skills that have greatly shaped my career."
   },
-  
+
   {
     name: "Aayush Dhokne",
     position: "Powertrain",
@@ -496,11 +512,32 @@ const team20222023 = [
 
 const Team1 = () => {
   const [animate, setAnimate] = useState(false);
-  const sectionRef = useRef(null);
 
-  useEffect(() => {
-    setAnimate(true);
-  }, []);
+ useEffect(() => {
+  setAnimate(true);
+
+  const main = document.querySelector("main");
+
+  if (!main) {
+    alert("ERROR: Main container missing!");
+    return;
+  }
+
+  const sections = main.querySelectorAll("section");
+
+  
+  if (sections.length < 2) {
+    alert("ERROR: Developers section is missing!");
+    return;
+  }
+
+  const firstContentSection = sections[1];
+
+  if (firstContentSection.id !== "developers-section") {
+    alert("ERROR: Developers section must be at the top!");
+  }
+
+}, []);
 
   return (
     <main className="w-full bg-[#101010] min-h-screen pt-20 lg:pt-24" style={{ position: 'relative', zIndex: 1 }}>
@@ -518,11 +555,66 @@ const Team1 = () => {
       </section>
 
       <hr className="bg-black border-b border-red-500" />
+      <section id="developers-section" className="my-20">
+        <div className="flex justify-center mb-12">
+          <h2 className={`learn-mo-line ${animate ? "active" : ""}`}>
+            <span className="font-bold text-2xl md:text-3xl text-white">
+              Developers Team
+            </span>
+          </h2>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-10 px-6">
+  {teamdevloper.map((member, index) => (
+    <div
+      key={index}
+      className="bg-[#1c1c1c] rounded-2xl w-full max-w-[28rem] min-h-[24rem] p-10 border border-white/10 hover:border-red-600/50 transition-all duration-300 relative group flex flex-col items-center text-center shadow-2xl"
+    >
+      {/* Profile Image with Red Outer Glow */}
+      <div className="relative mb-8">
+        <div className="w-40 h-40 rounded-full border-[3px] border-red-600 overflow-hidden shadow-[0_0_20px_rgba(220,38,38,0.5)]">
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-full h-full object-cover" 
+          />
+        </div>
+      </div>
+
+      {/* Text Content */}
+      <h3 className="text-2xl font-bold text-white mb-1">
+        {member.name}
+      </h3>
+      <p className="text-red-600 text-[4xl] font-black uppercase tracking-[0.2em] mb-6">
+        {member.position}
+      </p>
+      <p className="text-gray-300 text-sm italic leading-relaxed px-4">
+        "{member.review}"
+      </p>
+
+      {/* LinkedIn Badge - Exact match to screenshot */}
+      <a
+        href={member.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        className="absolute bottom-6 right-6 bg-[#f02e2e] text-white p-2 rounded-md hover:scale-110 transition-transform duration-200"
+      >
+        <FaLinkedin size={22} />
+      </a>
+    </div>
+  ))}
+</div>
+      </section>
 
       {/* container 1 */}
       <div className="mt-10 mb-16">
         <h2 className="section-heading"></h2>
         <div>
+          {/* Developers Section Start */}
+          
+          {/* Developers Section End */}
+
+
           <div className="w-full flex justify-center">
             <h2 className={`text-center mt-6 mb-4 learn-mo-line ${animate ? "active" : ""}`}>
               <span className="font-bold text-xl sm:text-2xl md:text-3xl block ">
