@@ -6,6 +6,7 @@ import Achievements from "./Components/Achievements/Achievements";
 import logo from "./assets/logo.png";
 import applogo from "./assets/gears-138199.gif";
 import About from "./Components/Gokart/Gokart";
+import Joinus from "./Components/St/Stairs.jsx";
 
 import Reev from "./Components/Reev/Reev";
 import Team1 from "./Components/Team2018-2019/Team1";
@@ -20,7 +21,7 @@ function App() {
 
     // Detect mobile device
     const isMobileDevice = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
+
     // Only add custom cursor on desktop
     if (isMobileDevice) return;
 
@@ -53,7 +54,7 @@ function App() {
     document.addEventListener('mousemove', moveCursor);
     document.addEventListener('mouseleave', hideCursor);
     document.addEventListener('mouseenter', showCursor);
-    
+
     // Add hover effects to interactive elements
     const interactiveElements = document.querySelectorAll('a, button, [role="button"], .cursor-pointer');
     interactiveElements.forEach(el => {
@@ -98,22 +99,23 @@ function App() {
         <Route
           path="/gokart"
           element={
-             <main className="w-full bg-[#101010] min-h-screen pt-20 lg:pt-24" style={{ position: 'relative', zIndex: 1 }}>
+            <main className="w-full bg-[#101010] min-h-screen pt-20 lg:pt-24" style={{ position: 'relative', zIndex: 1 }}>
               <About />
-              
+
             </main>
           }
         />
         <Route path="/team1" element={<Team1 />} />
         <Route path="/reev" element={<Reev />} />
-        <Route 
-  path="/team1c" 
-  element={
-    <main className="w-full bg-[#101010] min-h-screen pt-24">
-      <Team1C />
-    </main>
-  } 
-/>
+        <Route
+          path="/team1c"
+          element={
+            <main className="w-full bg-[#101010] min-h-screen pt-24">
+              <Team1C />
+            </main>
+          }
+        />
+      <Route path="/Stairs" element={<Joinus />} />
       </Routes>
     </>
   );
