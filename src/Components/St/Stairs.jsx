@@ -1,31 +1,70 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  Users,
-  MessageCircle,
-  Mail,
-  Phone,
-  User,
-  Briefcase,
-  ChevronRight,
-} from "lucide-react";
 import Footer from "../Footer/Footer.jsx";
 
+/* ================= SVG ICONS ================= */
+
+const Users = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <path d="M17 21v-2a4 4 0 0 0-3-3.87"></path>
+    <path d="M7 21v-2a4 4 0 0 1 3-3.87"></path>
+    <circle cx="12" cy="7" r="4"></circle>
+  </svg>
+);
+
+const MessageCircle = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <path d="M21 11.5a8.5 8.5 0 1 1-3-6.5L21 3v8.5z"></path>
+  </svg>
+);
+
+const Mail = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <path d="M4 4h16v16H4z"></path>
+    <path d="M22 6l-10 7L2 6"></path>
+  </svg>
+);
+
+const Phone = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <path d="M22 16.92V21a2 2 0 0 1-2.18 2"></path>
+    <path d="M2 3h4l2 5-3 2a16 16 0 0 0 6 6l2-3 5 2v4"></path>
+  </svg>
+);
+
+const User = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <circle cx="12" cy="7" r="4"></circle>
+    <path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path>
+  </svg>
+);
+
+const Briefcase = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <rect x="2" y="7" width="20" height="14"></rect>
+    <path d="M16 3H8v4h8z"></path>
+  </svg>
+);
+
+const ChevronRight = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <path d="M9 18l6-6-6-6"></path>
+  </svg>
+);
+
+/* ================= MAIN COMPONENT ================= */
+
 const Stairs = () => {
-  // External Links
   const LINKS = {
     form: "https://forms.google.com/your-form-link",
     whatsapp: "https://chat.whatsapp.com/your-community-link",
   };
 
-  // HERO animation state
   const [heroAnimate, setHeroAnimate] = useState(false);
   const heroHeadingRef = useRef(null);
 
-  // Leadership animation state
   const [leadershipInView, setLeadershipInView] = useState(false);
   const leadershipRef = useRef(null);
 
-  // ================= HERO OBSERVER =================
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -37,14 +76,10 @@ const Stairs = () => {
       { threshold: 0.4 }
     );
 
-    if (heroHeadingRef.current) {
-      observer.observe(heroHeadingRef.current);
-    }
-
+    if (heroHeadingRef.current) observer.observe(heroHeadingRef.current);
     return () => observer.disconnect();
   }, []);
 
-  // ================= LEADERSHIP OBSERVER =================
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -56,14 +91,10 @@ const Stairs = () => {
       { threshold: 0.3 }
     );
 
-    if (leadershipRef.current) {
-      observer.observe(leadershipRef.current);
-    }
-
+    if (leadershipRef.current) observer.observe(leadershipRef.current);
     return () => observer.disconnect();
   }, []);
 
-  // Leadership Data
   const LEADERS = [
     {
       role: "Captain",
@@ -94,53 +125,38 @@ const Stairs = () => {
   return (
     <div className="min-h-screen bg-[#101010] text-slate-900 font-sans">
 
-      {/* ================= HERO SECTION ================= */}
+      {/* HERO */}
       <section className="relative py-24 px-4 bg-[#101010] overflow-hidden">
-        {/* relative py-24 px-4 bg-gradient-to-br from-black via-zinc-900 to-black overflow-hidden */}
-
         <div className="relative z-10 max-w-4xl mx-auto text-center">
 
           <span className="inline-block mt-9 mb-6 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-white bg-white/10 border border-white/20 rounded-full backdrop-blur">
             Join the Legacy
           </span>
-          <br />
 
-          {/* Animated Heading */}
           <h2
             ref={heroHeadingRef}
-            className={`text-center mt-6 mb-4 learn-mo-line ${
-              heroAnimate ? "active" : ""
-            }`}
+            className={`mt-6 mb-4 ${heroAnimate ? "active" : ""}`}
           >
             <span className="font-bold text-xl sm:text-2xl md:text-3xl block text-white">
               We Are Recruiting
             </span>
           </h2>
 
-          <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto mb-10">
             text of resonance
           </p>
 
-          {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
 
-            <a
-              href={LINKS.form}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-2 px-8 py-4 bg-white text-red-700 rounded-xl font-bold text-lg shadow-xl hover:bg-gray-100 hover:-translate-y-1 transition"
-            >
+            <a href={LINKS.form} target="_blank" rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-2 px-8 py-4 bg-white text-red-700 rounded-xl font-bold text-lg hover:-translate-y-1 transition">
               <Briefcase className="w-5 h-5" />
               Join Us
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition" />
             </a>
 
-            <a
-              href={LINKS.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-8 py-4 bg-black text-white rounded-xl font-bold text-lg shadow-xl border border-red-600/30 hover:bg-zinc-900 hover:-translate-y-1 transition"
-            >
+            <a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-8 py-4 bg-black text-white rounded-xl font-bold text-lg border border-red-600/30 hover:-translate-y-1 transition">
               <MessageCircle className="w-5 h-5 text-green-500" />
               WhatsApp Community
             </a>
@@ -149,54 +165,33 @@ const Stairs = () => {
         </div>
       </section>
 
-      {/* ================= LEADERSHIP SECTION ================= */}
-      <section
-        ref={leadershipRef}
-        className="py-20 px-4 max-w-6xl mx-auto"
-      >
+      {/* LEADERSHIP */}
+      <section ref={leadershipRef} className="py-20 px-4 max-w-6xl mx-auto">
 
         <div className="text-center mb-16">
-
-          <h2 className={`learn-mo-line ${leadershipInView ? "active" : ""}`}>
+          <h2 className={`${leadershipInView ? "active" : ""}`}>
             <span className="font-bold text-xl sm:text-2xl md:text-3xl block text-white">
               Current Leadership
             </span>
           </h2>
 
-          <div className="" />
-
           <p className="mt-6 text-gray-400 max-w-lg mx-auto">
-            Have questions? Reach out to our Captain or Vice Captain directly.
+            Have questions? Reach out directly.
           </p>
-
         </div>
 
-        {/* Cards */}
         <div className="grid md:grid-cols-2 gap-10">
 
           {LEADERS.map((leader, index) => (
-            <div
-              key={index}
-              className={`relative flex flex-col sm:flex-row items-center gap-6 p-8 rounded-3xl shadow-xl border-t-8 transition-all duration-500 ease-out
-              ${
-                leadershipInView
-                  ? "bg-white/10 hover:bg-black hover:scale-105 "
-                  : "bg-white/10"
-              }
-              ${leader.theme.border}`}
-            >
+            <div key={index}
+              className="relative flex flex-col sm:flex-row items-center gap-6 p-8 rounded-3xl shadow-xl border-t-8 bg-white/10 hover:scale-105 transition">
 
-              {/* Avatar */}
-              <div
-                className={`w-28 h-28 flex items-center justify-center rounded-2xl ${leader.theme.bg}`}
-              >
+              <div className={`w-28 h-28 flex items-center justify-center rounded-2xl ${leader.theme.bg}`}>
                 <User className={`w-14 h-14 ${leader.theme.text}`} />
               </div>
 
-              {/* Info */}
               <div className="flex-1 space-y-4">
-
-                <span className={`text-xs font-bold uppercase px-3 py-1 rounded-full ${leader.theme.badge}`}>
+                <span className={`text-xs font-bold px-3 py-1 rounded-full ${leader.theme.badge}`}>
                   {leader.role}
                 </span>
 
@@ -205,38 +200,26 @@ const Stairs = () => {
                 </h3>
 
                 <div className="space-y-3">
-
-                  <a
-                    href={`tel:${leader.phone}`}
-                    className="flex items-center gap-3 text-gray-300 hover:text-red-400 transition"
-                  >
+                  <a href={`tel:${leader.phone}`} className="flex items-center gap-3 text-gray-300 hover:text-red-400">
                     <Phone className="w-4 h-4" />
                     {leader.phone}
                   </a>
 
-                  <a
-                    href={`mailto:${leader.email}`}
-                    className="flex items-center gap-3 text-gray-300 hover:text-red-400 transition"
-                  >
+                  <a href={`mailto:${leader.email}`} className="flex items-center gap-3 text-gray-300 hover:text-red-400">
                     <Mail className="w-4 h-4" />
                     {leader.email}
                   </a>
-
                 </div>
-
               </div>
 
-              <Users className="absolute -bottom-6 -right-6 w-40 h-40 opacity-5 rotate-12 pointer-events-none" />
-
+              <Users className="absolute -bottom-6 -right-6 w-40 h-40 opacity-5 rotate-12" />
             </div>
           ))}
 
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
       <Footer />
-
     </div>
   );
 };
