@@ -41,9 +41,9 @@ import v31 from "../../assets/Prathamesh.jpg";
 import v32 from "../../assets/Tanaya.jpg";
 import v33 from "../../assets/Ekta.jpg";
 import v34 from "../../assets/Gaurang.jpg";
-import v36 from "../../assets/ar.jpeg;
-import v37 from "../../assets/su.jpeg;
-import v38 from "../../assets/sp.png;
+import v36 from "../../assets/ar.jpeg";
+import v37 from "../../assets/su.jpeg";
+import v38 from "../../assets/sp.png";
 import MoviesCarousel from "../MoviesCarousel/MoviesCarousel.jsx";
 import Footer from "../Footer/Footer.jsx";
 
