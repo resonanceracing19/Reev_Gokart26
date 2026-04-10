@@ -514,26 +514,17 @@ const Team1 = () => {
   const [animate, setAnimate] = useState(false);
 
  useEffect(() => {
-  setAnimate(true);
+  const devSection = document.getElementById("developers-section");
+
+  if (!devSection) {
+    alert("ERROR: Developers section missing!");
+    return;
+  }
 
   const main = document.querySelector("main");
-
-  if (!main) {
-    alert("ERROR: Main container missing!");
-    return;
-  }
-
   const sections = main.querySelectorAll("section");
 
-  
-  if (sections.length < 2) {
-    alert("ERROR: Developers section is missing!");
-    return;
-  }
-
-  const firstContentSection = sections[1];
-
-  if (firstContentSection.id !== "developers-section") {
+  if (sections[1] !== devSection) {
     alert("ERROR: Developers section must be at the top!");
   }
 
