@@ -115,7 +115,7 @@ function App() {
             </main>
           }
         />
-      <Route path="/Stairs" element={<Joinus />} />
+      <Route path="/joinus" element={<Joinus />} />
       </Routes>
     </>
   );
