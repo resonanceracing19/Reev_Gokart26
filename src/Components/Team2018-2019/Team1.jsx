@@ -585,7 +585,7 @@ const Team1 = () => {
       <h3 className="text-2xl font-bold text-white mb-1">
         {member.name}
       </h3>
-      <p className="text-red-600 text-[4xl] font-black uppercase tracking-[0.2em] mb-6">
+      <p className="text-red-600 text-[4xl] font-black tracking-[0.2em] mb-6">
         {member.position}
       </p>
       <p className="text-gray-300 text-sm italic leading-relaxed px-4">
