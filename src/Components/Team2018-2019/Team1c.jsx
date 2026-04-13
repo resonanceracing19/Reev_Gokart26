@@ -1,207 +1,187 @@
-/* =========================
-   MAIN CONTAINER
-   ========================= */
-.movies-list {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  margin: 90px 0 20px !important;
-  background: transparent !important;
-}
+import React, { useRef, useState, useEffect } from "react";
+import "./Team1c.css";
 
-/* =========================
-   CARD CONTAINER
-   ========================= */
-.card-container {
-  display: flex;
-  scroll-snap-type: x mandatory;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
+// Assets
+import M3 from "../../assets/Sanika.jpg";
+import M4 from "../../assets/Anmol.jpg";
 
-/* =========================
-   CARD (NO SIZE CHANGE)
-   ========================= */
-.card {
-  flex: 0 0 45%;
-  min-height: 20rem;
-  aspect-ratio: 9/16;
-  position: relative;
-  scroll-snap-align: start;
-  border-radius: 12px;
-  overflow: hidden;
-  margin: 0 10px;
-}
+import Footer from "../Footer/Footer.jsx";
 
-/* =========================
-   IMAGE
-   ========================= */
-.card-img-blur-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.card-img-blur-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* keep as you want */
-  transform: scale(1);
-  transition: all 0.5s ease;
-}
 
-/* .card-img-blur-wrapper img,
-.card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform: scale(1);
-  transition: all 0.5s ease;
-} */
-
-/* Blur on hover */
-.card:hover .card-img-blur-wrapper img {
-  transform: scale(1.1);
-  filter: blur(10px);
-}
-
-/* =========================
-   OVERLAY CONTENT
-   ========================= */
-.card-body {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  z-index: 2;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;   /* 👈 FIXED */
-
-  padding-top: 25%;             /* 👈 spacing from top */
-
-  background: rgba(0, 0, 0, 0.6);
-
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
-}
-
-/* Show content on hover (desktop) */
-
-.card:hover .card-body {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
-   TEXT
-   ========================= */
-.name {
-  color: #ff0000;
-  font-size: 1.5rem;
-  margin: 0;
-  font-weight: 500;
-  text-transform: capitalize;
-  text-align: center;  /* 👈 center text */
-}
-
-.Anmol {
-  color: #fefefe;
-  opacity: 0.8;
-  font-weight: 500;
-  font-size: 1rem;
-  margin-top: 6px;
-  text-align: center;  /* 👈 center text */
-}
-
-/* =========================
-   LINKEDIN BUTTON
-   ========================= */
-.linkedin-btn {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-
-  background: #0077b5;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 0.85rem;
-
-  transition: 0.3s;
-}
-
-.linkedin-btn:hover {
-  background: #005582;
-}
-
-/* =========================
-   INDICATORS
-   ========================= */
-.indicator-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-  gap: 8px;
-}
-
-.indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  background: #ff000040;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.indicator.active {
-  background: #ff0101;
-}
-/* Auto hover for mobile/tablet */
-.card.auto-hover .card-body {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card.auto-hover .card-img-blur-wrapper img {
-  transform: scale(1.1);
-  filter: blur(10px);
-}
-/* =========================
-   RESPONSIVE
-   ========================= */
-@media (max-width: 992px) {
-  .card {
-    flex: 0 0 90%;
-    margin: 0 5px;
+const movies = [
+  
+  
+  {
+    name: "Anmol Gour",
+    des: "Computer Science",
+    img: M4,
+    link: "https://www.linkedin.com/in/anmol-gour-4455a6305/",
+  },
+  {
+    name: "Sanika Thorat ",
+    des: "computer science",
+    img: M3,
+    link: "https://www.linkedin.com/in/sanika-thorat-07b114287/",
   }
+  
+  
+];
 
-  .name {
-    font-size: 1.3rem;
-  }
+const MoviesCarousel = () => {
+  const [animate, setAnimate] = useState(false);
+      const sectionRef = useRef(null);
+    
+      useEffect(() => {
+        setAnimate(true);
+      }, []);
+  const containerRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoHoverIndex, setAutoHoverIndex] = useState(-1);
+  const intervalRef = useRef(null);
 
-  .Anmol {
-    font-size: 0.9rem;
-  }
-}
+  const scroll = (index) => {
+    const container = containerRef.current;
+    if (container) {
+      const scrollAmount = container.clientWidth;
+      container.scrollTo({
+        left: index * scrollAmount,
+        behavior: "smooth",
+      });
+    }
+    setCurrentIndex(index);
+  };
 
-@media (max-width: 600px) {
-  .card-body {
-    padding: 12px;
-  }
+  // Auto-scroll
+  const startAutoScroll = () => {
+    if (intervalRef.current) return; // prevent duplicate intervals
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % movies.length;
+        scroll(newIndex);
+        return newIndex;
+      });
+    }, 2500); // 2.5s interval
+  };
 
-  .linkedin-btn {
-    font-size: 0.75rem;
-    padding: 4px 8px;
-  }
-}
+  const stopAutoScroll = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
+  };
+
+  useEffect(() => {
+    startAutoScroll();
+    return () => stopAutoScroll();
+  }, []);
+
+  
+  useEffect(() => {
+  const isMobile = window.innerWidth <= 992;
+  if (!isMobile) return;
+
+  let index = 0;
+
+  const interval = setInterval(() => {
+    setAutoHoverIndex(index);
+
+    setTimeout(() => {
+      setAutoHoverIndex(-1);
+    }, 4000);
+
+    index = (index + 1) % movies.length;
+  }, 8000);
+
+  return () => clearInterval(interval);
+}, []);
+
+  
+  return (
+    <main className="w-full bg-[#101010] min-h-screen pt-20 lg:pt-24" style={{ position: 'relative', zIndex: 1 }}>
+        {/* container 1 */}
+        <section className="relative z-10">
+          <div className=" mx-auto px-4 pt-[20%] sm:pt-[15%] md:pt-[1%] pb-[12%] md:pb-[5%]">
+            <div className="text-center relative">
+              <div className="Jointe">
+                <h2 className={`learn-mo-line ${animate ? "active" : ""}`}>
+                  <span className="section-heading">Developer Team</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <hr className="bg-black border-b border-red-500" />
+  
+    <div
+      className="movies-list"
+      onMouseEnter={stopAutoScroll}
+      onMouseLeave={startAutoScroll}
+      onTouchStart={() => {
+    stopAutoScroll();
+    setAutoHoverIndex(-1);  // 👈 ADD HERE
+  }}
+      onTouchEnd={startAutoScroll}
+    >
+      <div className="card-container" ref={containerRef}>
+        {movies.map((m, idx) => (
+           <div
+  className={`card ${autoHoverIndex === idx ? "auto-hover" : ""}`}
+  key={idx}
+>
+            <div className="card-img-blur-wrapper">
+              <img src={m.img} alt={m.name}  />
+            </div>
+            <div className="card-body">
+              <h2 className="name">{m.name}</h2>
+              <h6 className="Anmol">{m.des}</h6>
+
+              {m.link && (
+                <a
+                  href={m.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="linkedin-btn"
+                >
+                   
+                   <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 
+                    2.761 2.239 5 5 5h14c2.762 0 
+                    5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 
+                    19h-3v-10h3v10zm-1.5-11.268c-.966 
+                    0-1.75-.79-1.75-1.764s.784-1.764 
+                    1.75-1.764 1.75.79 
+                    1.75 1.764-.784 1.764-1.75 
+                    1.764zm13.5 11.268h-3v-5.604c0-1.337-.027-3.062-1.867-3.062-1.868 
+                    0-2.155 1.46-2.155 2.969v5.697h-3v-10h2.879v1.367h.041c.401-.761 
+                    1.379-1.562 2.839-1.562 3.037 0 
+                    3.604 2.001 3.604 4.604v5.591z" />
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Circle Indicators */}
+      <div className="indicator-container">
+        {movies.map((_, idx) => (
+          <div
+            key={idx}
+            className={`indicator ${idx === currentIndex ? "active" : ""}`}
+            onClick={() => scroll(idx)}
+          ></div>
+        ))}
+      </div>
+    </div>
+    <Footer />
+      </main>
+  );
+};
+
+export default MoviesCarousel;
