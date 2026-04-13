@@ -10,19 +10,18 @@ import Footer from "../Footer/Footer.jsx";
 
 const movies = [
   
-  
+  {
+    name: "Sanika Thorat ",
+    des: "computer science",
+    img: M3,
+    link: "https://www.linkedin.com/in/sanika-thorat-07b114287/",
+  },
   {
     name: "Anmol Gour",
     des: "Computer Science",
     img: M4,
     link: "https://www.linkedin.com/in/anmol-gour-4455a6305/",
   },
-  {
-    name: "Sanika Thorat ",
-    des: "computer science",
-    img: M3,
-    link: "https://www.linkedin.com/in/sanika-thorat-07b114287/",
-  }
   
   
 ];
@@ -101,7 +100,7 @@ const MoviesCarousel = () => {
         {movies.map((m, idx) => (
           <div className="card" key={idx}>
             <div className="card-img-blur-wrapper">
-              <img src={m.img} alt={m.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:red-[5px]" />
+              <img src={m.img} alt={m.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-[5px]" />
             </div>
             <div className="card-body">
               <h2 className="name">{m.name}</h2>
