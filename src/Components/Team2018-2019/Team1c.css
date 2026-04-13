@@ -73,22 +73,22 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 100%;
 
   z-index: 2;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;   /* 👈 FIXED */
 
-  padding: 15px;
+  padding-top: 25%;             /* 👈 spacing from top */
 
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: rgba(0, 0, 0, 0.6);
 
   opacity: 0;
-
-  transform: translateY(20px);   /* 👈 ADD */
-  transition: all 0.4s ease;     /* 👈 ADD */
+  transform: translateY(20px);
+  transition: all 0.4s ease;
 }
 
 /* Show content on hover (desktop) */
@@ -104,9 +104,10 @@
 .name {
   color: #ff0000;
   font-size: 1.5rem;
-  margin-bottom: 25%;
-  font-weight: 500; /* FIXED */
+  margin: 0;
+  font-weight: 500;
   text-transform: capitalize;
+  text-align: center;  /* 👈 center text */
 }
 
 .Anmol {
@@ -114,9 +115,8 @@
   opacity: 0.8;
   font-weight: 500;
   font-size: 1rem;
-  margin-top: 0;
-  padding: 0%;
-  margin-left: 76%;
+  margin-top: 6px;
+  text-align: center;  /* 👈 center text */
 }
 
 /* =========================
