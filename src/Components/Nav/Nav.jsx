@@ -165,7 +165,7 @@ function Nav() {
             >
               <Link to="/" className="block">
                 {!menuOpen && <img 
-                  src="/logo.jpg" 
+                  src="/logo5.png" 
                   alt="REEV" 
                   className="h-20 w-auto sm:h-32 lg:h-40 transition-transform duration-300 hover:scale-110"
                 />}
