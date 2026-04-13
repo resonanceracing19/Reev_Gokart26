@@ -16,27 +16,34 @@
   }
   
   .card {
-    flex: 0 0 50%; /* 🔹 2 cards on desktop */
-    height: 350px;
+    flex: 0 0 45%; /* Adjusted for margins: 50% - 10px sides */
+    min-height: 20rem;
+    aspect-ratio: 9/16;
     position: relative;
     scroll-snap-align: start;
     border-radius: 12px;
     overflow: hidden;
-    margin: 0px;
+    margin: 0 10px;
   }
-  
-  .card-img {
+
+  .card-img-blur-wrapper {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+  }
+  
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     filter: none;                 /* clear initially */
     transform: scale(1.05);
     transition: filter 0.4s ease-in-out;
   }
   /* Target the image when the card is hovered */
-.card:hover .card-img-blur-wrapper img {
+.card-img-blur-wrapper img {
     transform: scale(1.1);
-    filter: blur(15px);
+    filter: blur(0px);
+    object-fit: contain;
     transition: all 0.5s ease;
 }
   .card:hover .card-img {
@@ -132,6 +139,11 @@
   .indicator.active {
     background: #ff0101;
   }
+  .card:hover .card-img-blur-wrapper img {
+    transform: scale(1.1);
+    filter: blur(15px);
+    transition: all 0.5s ease;
+}
   
   /* =========================
      RESPONSIVE DESIGN
@@ -140,35 +152,41 @@
   /* Tablet & Mobile: show only 1 card */
   @media (max-width: 992px) {
     .card {
-      flex: 0 0 150%; /* 🔹 full width card */
-      margin: 0;
+      flex: 0 0 90%; /* Adjusted for side margins */
+      margin: 0 5px;
     }
-  
+
     .name {
       font-size: 1.5rem;
     }
-  
+
     .des {
       font-size: 0.85rem;
     }
   }
   
   @media (max-width: 600px) {
+    .card {
+      margin: 0 5px;
+    }
+
     .name {
       font-size: 1.3rem;
     }
-  
+
     .des {
       font-size: 0.8rem;
     }
-  
+
     .card-body {
       padding: 12px;
       gap: 8px;
     }
-  
+
     .linkedin-btn {
       font-size: 0.8rem;
       padding: 0rem 0rem;
     }
   }
+
+  
