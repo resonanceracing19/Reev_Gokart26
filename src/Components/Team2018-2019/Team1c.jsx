@@ -36,6 +36,7 @@ const MoviesCarousel = () => {
       }, []);
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoHoverIndex, setAutoHoverIndex] = useState(-1);
   const intervalRef = useRef(null);
 
   const scroll = (index) => {
@@ -73,6 +74,26 @@ const MoviesCarousel = () => {
   }, []);
 
   
+  useEffect(() => {
+  const isMobile = window.innerWidth <= 992;
+  if (!isMobile) return;
+
+  let index = 0;
+
+  const interval = setInterval(() => {
+    setAutoHoverIndex(index);
+
+    setTimeout(() => {
+      setAutoHoverIndex(-1);
+    }, 4000);
+
+    index = (index + 1) % movies.length;
+  }, 8000);
+
+  return () => clearInterval(interval);
+}, []);
+
+  
   return (
     <main className="w-full bg-[#101010] min-h-screen pt-20 lg:pt-24" style={{ position: 'relative', zIndex: 1 }}>
         {/* container 1 */}
@@ -94,14 +115,20 @@ const MoviesCarousel = () => {
       className="movies-list"
       onMouseEnter={stopAutoScroll}
       onMouseLeave={startAutoScroll}
-      onTouchStart={stopAutoScroll}
+      onTouchStart={() => {
+    stopAutoScroll();
+    setAutoHoverIndex(-1);  // 👈 ADD HERE
+  }}
       onTouchEnd={startAutoScroll}
     >
       <div className="card-container" ref={containerRef}>
         {movies.map((m, idx) => (
-          <div className="card" key={idx}>
+           <div
+  className={`card ${autoHoverIndex === idx ? "auto-hover" : ""}`}
+  key={idx}
+>
             <div className="card-img-blur-wrapper">
-              <img src={m.img} alt={m.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:red-[5px]" />
+              <img src={m.img} alt={m.name}  />
             </div>
             <div className="card-body">
               <h2 className="name">{m.name}</h2>
@@ -112,7 +139,7 @@ const MoviesCarousel = () => {
                   href={m.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-3 right-3 bg-blue-600 text-white px-3 py-2 rounded-full flex items-center gap-2 hover:bg-blue-700 transition"
+                  className="linkedin-btn"
                 >
                   View LinkedIn
                   <svg
