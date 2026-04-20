@@ -14,7 +14,7 @@ const Stairs = () => {
   // External Links
   const LINKS = {
     form: "https://forms.google.com/your-form-link",
-    whatsapp: "https://chat.whatsapp.com/your-community-link",
+    whatsapp: "‎https://chat.whatsapp.com/JOxnh2E4dUs1HyGe3yxtzO",
   };
 
   // HERO animation state
