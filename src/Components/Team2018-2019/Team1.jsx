@@ -691,7 +691,6 @@ const Team1 = () => {
           <div>
             <AnmolCarousel data={team20222023} />
           </div>
-
         </div>
 
       </div>
