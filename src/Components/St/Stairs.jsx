@@ -8,13 +8,14 @@ import {
   Briefcase,
   ChevronRight,
 } from "lucide-react";
+
 import Footer from "../Footer/Footer.jsx";
 
 const Stairs = () => {
   // External Links
   const LINKS = {
-    form: "https://forms.google.com/your-form-link",
-    whatsapp: "‎https://chat.whatsapp.com/JOxnh2E4dUs1HyGe3yxtzO",
+    form: "#",
+    whatsapp: "https://chat.whatsapp.com/JOxnh2E4dUs1HyGe3yxtzO",
   };
 
   // HERO animation state
@@ -66,10 +67,10 @@ const Stairs = () => {
   // Leadership Data
   const LEADERS = [
     {
-      role: "Captain",
-      name: "Omkar Tigote",
-      phone: "+91 1234567899",
-      email: "captain@gmail.com",
+      
+      name: "Harshvardhan Ghatge",
+      phone: "+91 9049959909",
+      email: "harshvardhan14ghatge@gmail.com",
       theme: {
         border: "border-white/10",
         bg: "bg-red-50",
@@ -78,10 +79,10 @@ const Stairs = () => {
       },
     },
     {
-      role: "Vice Captain",
-      name: "Tanaya Otari",
-      phone: "+91 9876543211",
-      email: "vicecaptain@gmail.com",
+      
+      name: "Aadesh mehta" ,
+      phone: "+91 9766780387",
+      email: "aadeshmehta7@gmail.com",
       theme: {
         border: "border-white/10",
         bg: "bg-gray-100",
@@ -118,7 +119,7 @@ const Stairs = () => {
           </h2>
 
           <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-            text of resonance
+            Join Resonance Racing - Transform your passion for engineering into real-world impact. Work on cutting-edge EV projects, develop leadership skills, and compete at national levels.
           </p>
 
           {/* Buttons */}
@@ -196,9 +197,7 @@ const Stairs = () => {
               {/* Info */}
               <div className="flex-1 space-y-4">
 
-                <span className={`text-xs font-bold uppercase px-3 py-1 rounded-full ${leader.theme.badge}`}>
-                  {leader.role}
-                </span>
+                
 
                 <h3 className="text-3xl font-bold text-white">
                   {leader.name}
