@@ -7,7 +7,7 @@ import M4 from "../../assets/Anmol.png";
 // Assets
 import v1 from "../../assets/v1.jpg";
 import { FaLinkedin } from "react-icons/fa";  
-import v2 from "../../assets/Picture2.jpg";
+import v2 from "../../assets/omkar.jpeg";
 import v3 from "../../assets/Alok Vishwakarma.jpg";
 import v4 from "../../assets/Aadesh Mehta.jpg";
 import v5 from "../../assets/Aditi Jadhav.jpg";
@@ -16,7 +16,7 @@ import v7 from "../../assets/Kadambari Ovhal.jpg";
 import v8 from "../../assets/Nandita Mophare.jpg";
 import v9 from "../../assets/Sakshi Patil.jpg";
 import v10 from "../../assets/Shivani Patankar.jpg";
-import v11 from "../../assets/Sarthak Wankar.jpg";
+import v11 from "../../assets/Shreya.jpeg";
 import v12 from "../../assets/Pritviraj Kapale.jpg";
 import v13 from "../../assets/Tanaya Otari.jpg";
 import v14 from "../../assets/Vinit Raul.jpg";
@@ -97,7 +97,7 @@ const team20252026 = [
   {
     name: "Shreya Deshmukh",
     position: "Design",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: v11,
     linkedin: "https://www.linkedin.com/in/shreya-deshmukh-377545384?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     review: "We focused on reducing the weight of the chassis while maintaining structural integrity."
   },
@@ -147,7 +147,7 @@ const team20252026 = [
   {
     name: "Aadesh Mehta ",
     position: "Electrical Powertrain",
-    image: v36,
+    image: v4,
     linkedin: "https://www.linkedin.com/in/aadesh-mehta-91aa08342?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     review: "My experience is so good like I understand what real engineering is and also how to do research about new concepts. There is lots of learning in workshop which helps to build my personality even better."
   },
@@ -227,7 +227,7 @@ const team20252026 = [
   {
     name: "Arnav Shinde ",
     position: "Brakes",
-    image: v4,
+    image: v36,
     linkedin: "https://www.linkedin.com/in/arnav-shinde-38011a385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
@@ -513,7 +513,7 @@ const team20222023 = [
 const Team1 = () => {
   const [animate, setAnimate] = useState(false);
 
-useEffect(() => {
+ useEffect(() => {
   setAnimate(true);
 
   const main = document.querySelector("main");
