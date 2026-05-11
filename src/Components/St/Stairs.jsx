@@ -167,7 +167,7 @@ const Stairs = () => {
           <div className="" />
 
           <p className="mt-6 text-gray-400 max-w-lg mx-auto">
-            Have questions? Reach out to our Captain or Vice Captain directly.
+            Have questions? Reach out to our recruiter team directly.
           </p>
 
         </div>
