@@ -31,7 +31,7 @@ function Footer() {
         {/* Social Icons */}
         <div className="flex justify-center gap-4 mb-4">
           {[
-            { icon: "ri-instagram-line", url: "https://www.instagram.com/reev.racingclub/ " },
+            { icon: "ri-instagram-line", url: "https://www.instagram.com/resonance_racing_reev_gokart?igsh=MXc5d2U0NmdsbXg3bA==" },
             { icon: "ri-linkedin-fill", url: "https://www.linkedin.com/company/resonance-racing-gokart/" },
             { icon: "ri-youtube-fill ", url: "https://youtube.com/@resonanceracing5031?si=bnSSbyo_5jX5txxj" },
           ].map(({ icon, url }, idx) => (
