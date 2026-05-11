@@ -14,7 +14,7 @@ import Footer from "../Footer/Footer.jsx";
 const Stairs = () => {
   // External Links
   const LINKS = {
-    form: "#",
+    form: "https://forms.gle/5jmTWaBe2ft2vgYk8",
     whatsapp: "https://chat.whatsapp.com/JOxnh2E4dUs1HyGe3yxtzO",
   };
 
