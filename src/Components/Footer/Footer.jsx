@@ -32,9 +32,8 @@ function Footer() {
         <div className="flex justify-center gap-4 mb-4">
           {[
             { icon: "ri-instagram-line", url: "https://www.instagram.com/reev.racingclub/ " },
-            { icon: "ri-facebook-circle-fill", url: "https://www.facebook.com/reev.racingclub/" },
-            { icon: "ri-linkedin-fill", url: "https://www.linkedin.com/company/reev-racing-club/" },
-            { icon: "ri-youtube-fill ", url: "https://www.youtube.com/channel/UCG1X_g89zOZb30nZS7gIk6Q" },
+            { icon: "ri-linkedin-fill", url: "https://www.linkedin.com/company/resonance-racing-gokart/" },
+            { icon: "ri-youtube-fill ", url: "https://youtube.com/@resonanceracing5031?si=bnSSbyo_5jX5txxj" },
           ].map(({ icon, url }, idx) => (
             <a
               key={idx}
