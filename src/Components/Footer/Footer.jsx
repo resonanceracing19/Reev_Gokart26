@@ -49,7 +49,7 @@ function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-gray-400 text-sm">
-          © 2025 <span className="text-red-600 font-bold">REEV</span> Racing Club. All rights reserved.
+          © 2026 <span className="text-red-600 font-bold">REEV</span> Racing Club. All rights reserved.
         </div>
       </footer>
     </>
