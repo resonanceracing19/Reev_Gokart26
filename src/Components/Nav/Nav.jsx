@@ -279,8 +279,8 @@ function Nav() {
               >
                 {[
                   { icon: "bi-instagram", label: "https://www.instagram.com/resonance_racing_reev_gokart?igsh=MXc5d2U0NmdsbXg3bA==" },
-                  { icon: "bi-youtube", label: "https://www.linkedin.com/company/resonance-racing-gokart/" },
-                  { icon: "bi-linkedin", label: "https://youtube.com/@resonanceracing5031?si=bnSSbyo_5jX5txxj" },
+                  { icon: "bi-youtube", label: "https://youtube.com/@resonanceracing5031?si=bnSSbyo_5jX5txxj" },
+                  { icon: "bi-linkedin", label: "https://www.linkedin.com/company/resonance-racing-gokart/ " },
                 ].map((social, index) => (
                   <motion.a
                     key={social.label}
