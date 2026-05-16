@@ -9,13 +9,11 @@ import v1 from "../../assets/v1.jpg";
 import { FaLinkedin } from "react-icons/fa";  
 import v2 from "../../assets/omkar.jpeg";
 import v3 from "../../assets/Alok Vishwakarma.jpg";
-import v4 from "../../assets/Aadesh Mehta.jpg";
+import v4 from "../../assets/Aadesh.jpeg";
 import v5 from "../../assets/Aditi Jadhav.jpg";
 import v6 from "../../assets/Aditya Waghe.jpg";
 import v7 from "../../assets/Kadambari Ovhal.jpg";
 import v8 from "../../assets/Nandita Mophare.jpg";
-import v9 from "../../assets/Sakshi Patil.jpg";
-import v10 from "../../assets/Shivani Patankar.jpg";
 import v11 from "../../assets/Shreya.jpeg";
 import v12 from "../../assets/Pritviraj Kapale.jpg";
 import v13 from "../../assets/Tanaya Otari.jpg";
@@ -43,8 +41,11 @@ import v34 from "../../assets/Gaurang.jpg";
  import v36 from "../../assets/ar.jpeg";
  import v37 from "../../assets/su.jpeg";
  import v38 from "../../assets/sp.png";
+ import n1 from "../../assets/Vignesh.jpeg";
+ import n2 from "../../assets/Suyash.jpeg";
 import MoviesCarousel from "../MoviesCarousel/MoviesCarousel.jsx";
 import Footer from "../Footer/Footer.jsx";
+import { SiN26 } from "react-icons/si";
 const teamdevloper = [
   {
     name: "Anmol Gour",
@@ -71,7 +72,7 @@ const team20252026 = [
     position: "(Team Captain)",
     image: v2,
     linkedin: "https://www.linkedin.com/in/omkar-tigote-a207892a8/",
-    review: "Leading the team during the 2018-19 season was a journey of innovation and grit."
+    review: "Leading the team during the 2025-26 season was a journey of innovation and grit."
   },
   {
     name: "Tanaya Otari ",
@@ -102,26 +103,20 @@ const team20252026 = [
     review: "We focused on reducing the weight of the chassis while maintaining structural integrity."
   },
   {
+    name: "Harshvardhan Ghatge ",
+    position: "Design",
+    image: v15,
+    linkedin: "https://www.linkedin.com/in/harsvhardhan-ghatge-935423350?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
+  },
+  {
     name: "Anurag Kedar",
     position: "Design",
     image: v21,
     linkedin: "https://www.linkedin.com/in/anurag-kedar-0502461b1?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "The integration of our custom BMS was a breakthrough for the team's performance."
   },
-  {
-    name: "Sakshi Patil",
-    position: "Electrical Powertrain",
-    image: v9,
-    linkedin: "https://www.linkedin.com/in/sakshi-patil-886141378?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-    review: "I learned various technical skills and hands on experience"
-  },
-  {
-    name: "Shivani Patankar",
-    position: "Electrical Powertrain",
-    image: v10,
-    linkedin: "https://www.linkedin.com/in/shivani-patankar-4b2273378?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    review: " I learned practical engineering skills, teamwork, and how to work under competition pressure.This experience improved my technical knowledge and helped shape my career in the electric vehicle field."
-  },
+
   {
     name: " Aditi Jadhav",
     position: "Electrical Powertrain",
@@ -181,6 +176,14 @@ const team20252026 = [
     linkedin: "#",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
+  
+  {
+    name: "Vignesh Patil",
+    position: "Vehicle Dynamics",
+    image: n1,
+    linkedin: "https://www.linkedin.com/in/vighnesh-patil-931b6734a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle ",
+  },
 
   {
     name: "Prashant Mandora ",
@@ -196,13 +199,7 @@ const team20252026 = [
     linkedin: "https://www.linkedin.com/in/ketan-sonawane-774706285?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
-  {
-    name: "Harshvardhan Ghatge ",
-    position: "M Powertrain",
-    image: v15,
-    linkedin: "https://www.linkedin.com/in/harsvhardhan-ghatge-935423350?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
-  },
+  
   {
     name: "Vihan Jange ",
     position: "M Powertrain",
@@ -231,7 +228,13 @@ const team20252026 = [
     linkedin: "https://www.linkedin.com/in/arnav-shinde-38011a385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
-
+  {
+    name: "Suyash Supane",
+    position: "Brakes",
+    image: n2,
+    linkedin: "https://www.linkedin.com/in/suyash-supane-2663b9387?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle ",
+  },
 ];
 
 const team20242025 = [
