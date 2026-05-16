@@ -43,6 +43,7 @@ import v34 from "../../assets/Gaurang.jpg";
  import v38 from "../../assets/sp.png";
  import n1 from "../../assets/Vignesh.jpeg";
  import n2 from "../../assets/Suyash.jpeg";
+import n3 from "../../assets/Parag.jpeg";
 import MoviesCarousel from "../MoviesCarousel/MoviesCarousel.jsx";
 import Footer from "../Footer/Footer.jsx";
 import { SiN26 } from "react-icons/si";
@@ -498,7 +499,7 @@ const team20222023 = [
   {
     name: "Parag Dhamne",
     position: "Vehicle Dynamics",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "n3",
     linkedin: "https://www.linkedin.com/in/parag-dhamne-6538b8228?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the Resonance Racing Go-kart & REEV team as a member of the Steering and Vehicle Dynamics department was a highly enriching experience. It provided me with practical exposure to design, analysis, and teamwork beyond classroom learning."
   },
