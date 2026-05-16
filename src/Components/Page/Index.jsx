@@ -15,7 +15,20 @@ import r3 from "../../assets/Nikhil.jpg";
 import r4 from "../../assets/Mahesh.jpg";
 import r5 from "../../assets/Ashish.jpg";
 import r6 from "../../assets/Aditya.jpg"; 
-import r7 from "../../assets/About1.jpeg"
+import r7 from "../../assets/About1.jpeg";
+import n1 from "../../assets/Kaushal.jpg";
+import n2 from "../../assets/Vishwajeet.jpg";
+import n3 from "../../assets/Sahil.jpg";
+import n4 from "../../assets/Shreeyash.jpg";
+import n5 from "../../assets/Manoj.jpg";
+import n6 from "../../assets/Shubham.jpg";
+import n7 from "../../assets/Ketan Sonawane.jpg";
+import n8 from "../../assets/Prashant Mandora.jpg";
+import n9 from "../../assets/Tanaya.jpg";
+import n10 from "../../assets/Onkar Padale.jpg";
+import n11 from "../../assets/Omkar.jpeg";
+import n12 from "../../assets/Ajay.jpg";
+import n13 from "../../assets/Parag.jpg";
 
 // Assets
 
@@ -80,7 +93,85 @@ export default function Index() {
       position: "Powertrain Member",
       Dis: "Being a part of Team Resonance Racing was an experience like no other. The entire process of building the go-kart taught me far more than just engineering, it taught me how to work as a team, take ownership, and dedicate myself completely to a shared goal which is to learn, improve, and compete to win.Throughout the journey, I learned to handle real-world challenges like managing people, solving technical problems, and balancing time under pressure. But above all, the most valuable lesson was developing a “never give up” attitude. That mindset has stayed with me beyond college, in professional life, where ups and downs are inevitable, it reminds me to stay persistent, keep learning, and continue doing the things that truly matter.# Roar for RR",
       image: r6
-    }
+    },
+    {
+      name: "Kaushal More",
+      position: "Team Captain Batch 2023-2024",
+      Dis:  "Being a part of Team Resonance was one of the best experiences during my college days. It gave me a real taste of teamwork, technical challenges, and management responsibilities. Working on projects and leading tasks helped me improve my problem-solving and communication skills, which have played a big role in shaping my career and confidence today.",
+      image: n1
+    },
+    {
+      name: "Vishwajeet Ghatage",
+      position: "Mechanical Powertrain Head Batch 2022-2023",
+      Dis: "It was a tremendous experience working with the team — full of great memories from our workshops. The experience helped me develop strong team-building, leadership, and collaboration skills that have greatly shaped my career.",
+      image: n2
+    },
+    {
+      name: "Sahil Pawar",
+      position: "Mechanical Powertrain Member Batch 2022-2023",
+      Dis: "Joining Resonance Racings Go-kart & Reev team as a powertrain engineer was a hands-on adventure, taking me from learning to designing, simulating, fabricating, and rigorously testing all our “khurafati” ideas. Working side by side with joyful and talented teammates shaped me into a better team player. Every late night spent tweaking designs or brainstorming new problems for our “perfect” solutions sparked creative, out-of-the-box thinking, and helped me grow as both a problem solver and an open-minded collaborator—always eager to make things better, together. As Dominic Toretto said, “I don’t have friends, I got family” in them.",
+      image: n3
+    },
+    {
+      name: "Shreeyash Chandgude",
+      position: "Electrical Powertrain Batch 2022-2023",
+      Dis: "Being a part of the Resonance Racing Club as a Powertrain Engineer was a transformative experience in my college life. I actively participated in REEV and Go-Kart events, where I got the opportunity to apply my academic knowledge to real-world engineering challenges. Coming from an electrical background, working on engines and motors deepened my understanding of mechanical and electrical integration in vehicles. The experience taught me the importance of consistency, determination, and teamwork — qualities that have greatly shaped my professional approach and continue to guide my career growth.",
+      image: n4
+    },
+    {
+      name: "Manoj Gore",
+      position: "Vehicle Dynamics Head Batch 2023-2024",
+      Dis: "Being part of the Resonance Racing team was one of the most transformative experiences of my engineering journey. It provided me with a deep, practical understanding of how theoretical vehicle dynamics translate into real-world performance. Working in a competitive and fast-paced environment taught me to think critically, analyze data effectively, and make engineering decisions under pressure.This experience not only enhanced my technical knowledge  but also shaped my career direction towards the rotating equipments industry.",
+      image: n5
+    },
+    {
+      name: "Shubham Landage",
+      position: "Team Captain Batch 2022-20223",
+      Dis: "Being part of Resonance Racing was one of the most defining chapters of my journey. While leading the team as a captain, it not only strengthened my technical foundation but also taught me what real-world leadership, collaboration, and perseverance mean. Every late night at the workshop, every failed test run, and every breakthrough shaped my mindset to think like an engineer and act like a leader.\nThe experience gave me a deep sense of ownership, problem-solving ability, and the confidence to take on challenges far beyond the racetrack. Today, as I work in the corporate world, I carry the same drive, discipline, and passion that Resonance Racing instilled in me and it always feels like I've got something extra in me because of this journey.\n#RR For Life  🏁",
+      image: n6
+    },
+    {
+      name: "Ketan Sonawane",
+      position: "Team Captain Batch 2024-2025",
+      Dis: "Being a part of Team Resonance Racing and leading it as a Captain and Powertrain Engineer was one of the most transformative phases of my journey. It not only strengthened my technical expertise but also enhanced my leadership, decision-making, and teamwork abilities. The challenges we faced and overcame together shaped me into a confident, disciplined, and goal-oriented individual who stands out in any situation.",
+      image: n7 
+    },
+    {
+      name: "Prashant Mandora",
+      position: "Mechanical Powertrain Head Batch 2024-2025",
+      Dis: "Being a part of Resonance Racing REEV & Go-Kart as Powertrain Head it was an incredible journey. It helped me build strong technical and leadership skills through real-world engineering challenges. Working with a passionate team taught me problem-solving, teamwork, and time management. This experience shaped my confidence and prepared me for my professional career. Every challenge became a learning experience, and every race proved our teamwork. Grateful to the team for their dedication, energy, and spirit that kept us pushing limits.Once a racer, always a racer — the journey doesn’t end, it inspires the next lap",
+      image: n8
+    },
+    {
+      name: "Tanaya Sabade",
+      position: "Electrical Powertrain Member Batch 2024-2025",
+      Dis: "Being part of Resonance Racing was one of the most impactful experiences of my college life. Working on real vehicle systems taught me how to think like an engineer — solving problems practically, managing time under pressure, and collaborating with a multidisciplinary team. It strengthened my technical understanding, boosted my confidence, and gave me valuable exposure to real-world engineering, which continues to guide my career path today.",
+      image: n9
+    },
+    {
+      name: "Onkar Padale",
+      position: "Driver Batch 2024-2025",
+      Dis: "Being part of Resonance Racing was one of the most impactful experiences of my college life. Working on real vehicle systems taught me how to think like an engineer — solving problems practically, managing time under pressure, and collaborating with a multidisciplinary team. It strengthened my technical understanding, boosted my confidence, and gave me valuable exposure to real-world engineering, which continues to guide my career path today. \n These achievements were possible because of the strong foundation built by our alumni. Their guidance, experience, and constant support have always been the backbone of the team. The standards they set and the knowledge they shared continue to inspire us to reach higher goals every season.\nThe exposure to real-world engineering problems helped me build a strong foundation for my career as a design engineer.",
+      image: n10
+    },
+    {
+      name: "Omkar Tigote",
+      position: "Team Captain Batch 2025-2026",
+      Dis: "Being the Team Captain of Resonance Racing GoKart and REEV during 2025–26 has been one of the most meaningful and unforgettable journeys of my life. I joined the workshop in my first year and dedicated four incredible years to this team, and in return, it gave me far more than I could have imagined. From strengthening my basic fundamentals to developing my engineering and technical skills, this team shaped me into the person I am today. Beyond academics and engineering, it taught me valuable life lessons and gave me a glimpse of the real world outside college. Resonance Racing became my second home, and the memories, struggles, achievements, and friendships I built here will always stay close to my heart. When I was appointed captain, the team had only three members, including myself. Today, as I hand over the responsibility, I leave behind a strong core team of 16 dedicated members, which is a matter of immense pride for me. I always believed in carrying the legacy forward, and I hope the same passion and spirit continue to drive this team to greater heights in every competition. Leaving this place will definitely give me FOMO, because this team has truly been the best part of my college life. Wishing Resonance Racing and REEV all the success for the future and hoping the team continues to roar louder than ever. \n#RoarForRR.",
+      image: n11
+    },
+    {
+      name: "Ajay Sawant",
+      position: "Team Manager (Steering) Batch 2019-20",
+      Dis: "Looking back, joining Resonance Racing was the single most important decision of my college career. As a member, my experience wasn't just about part of team it was a trial by fire that turned theory into reality.",
+      image: n12
+    },
+    {
+      name: "Parag Dhamane",
+      position: "Vehicle Dyanmics Member Batch 2022-23",
+      Dis: "Being part of the Resonance Racing Go-kart & REEV team as a member of the Steering and Vehicle Dynamics department was a highly enriching experience. It provided me with practical exposure to design, analysis, and teamwork beyond classroom learning.\nSecuring AIR 3 in the IKC was a proud achievement that strengthened my technical and problem-solving skills.\nThe experience greatly contributed to my professional growth and helped me in securing a position in my career.\n I Will be always greatful for this opportunity",
+      image: n13
+    },
   ];
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
@@ -1133,3 +1224,4 @@ Together, Resonance Racing fosters innovation, teamwork, and excellence in motor
     </main>
   );
 }
+
