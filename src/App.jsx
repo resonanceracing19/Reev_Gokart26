@@ -11,7 +11,6 @@ import Joinus from "./Components/St/Stairs.jsx";``
 import Reev from "./Components/Reev/Reev";
 import Team1 from "./Components/Team2018-2019/Team1";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
-import Team1C from "./Components/Team2018-2019/Team1c";
 
 
 function App() {
