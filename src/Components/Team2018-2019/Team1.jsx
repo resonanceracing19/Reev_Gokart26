@@ -4,6 +4,7 @@ import AnmolCarousel from "../../Components/Carousel/Carousel.jsx";
 import "../../Components/Team2018-2019/Team1.css"
 import M3 from "../../assets/Sanika.jpeg";
 import M4 from "../../assets/Anmol.png";
+
 // Assets
 import v1 from "../../assets/v1.jpg";
 import { FaLinkedin } from "react-icons/fa";  
