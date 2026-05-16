@@ -160,14 +160,14 @@ const Stairs = () => {
 
           <h2 className={`learn-mo-line ${leadershipInView ? "active" : ""}`}>
             <span className="font-bold text-xl sm:text-2xl md:text-3xl block text-white">
-              Current Leadership
+              Current Recruiters
             </span>
           </h2>
 
           <div className="" />
 
           <p className="mt-6 text-gray-400 max-w-lg mx-auto">
-            Have questions? Reach out to our recruiter team directly.
+            Have questions? Reach out to our recruiters directly.
           </p>
 
         </div>
