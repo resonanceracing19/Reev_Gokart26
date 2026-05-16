@@ -13,7 +13,7 @@ function Footer() {
           {name:"Reev", href: "/reev"},
           {name:"Achievements", href: "/achievements"},
           {name:"Team", href: "/team1"},
-          {name:"Developer", href: "/team1c"},
+         
           {name:"Join Us", href: "/joinus"}].map(
             (link, i) => (
               <React.Fragment key={i}>
