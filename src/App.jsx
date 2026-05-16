@@ -106,14 +106,7 @@ function App() {
         />
         <Route path="/team1" element={<Team1 />} />
         <Route path="/reev" element={<Reev />} />
-        <Route
-          path="/team1c"
-          element={
-            <main className="w-full bg-[#101010] min-h-screen pt-24">
-              <Team1C />
-            </main>
-          }
-        />
+        
       <Route path="/joinus" element={<Joinus />} />
       </Routes>
     </>
