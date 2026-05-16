@@ -28,7 +28,7 @@ import n9 from "../../assets/Tanaya.jpg";
 import n10 from "../../assets/Onkar Padale.jpg";
 import n11 from "../../assets/Omkar.jpeg";
 import n12 from "../../assets/Ajay.jpg";
-import n13 from "../../assets/Parag.jpg";
+import n13 from "../../assets/Parag.jpeg";
 
 // Assets
 
