@@ -30,6 +30,7 @@ import n11 from "../../assets/Omkar.jpeg";
 import n12 from "../../assets/Ajay.jpg";
 import n13 from "../../assets/Parag.jpg";
 
+
 // Assets
 
 import slideImg1 from "../../assets/Sponser1.png";
