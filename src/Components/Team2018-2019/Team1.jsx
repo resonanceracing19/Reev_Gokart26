@@ -391,15 +391,6 @@ const team20232024 = [
     review: "Experience in team is Good Gaining Knowledge and experience about working on vehicle "
   },
 
-
-
-  {
-    name: "Gaurang Gujarthi",
-    position: "Brakes",
-    image: v34,
-    linkedin: "https://www.linkedin.com/in/gaurang-gujarathi-ba7375206?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-    review: "Being part of the AISSMS Motorsport Club shaped my journey as an engineer. Working on Go-Karts and SAE REEV taught me teamwork, leadership, and real-world problem-solving."
-  },
   {
     name: "Vinit Raul ",
     position: "Brakes",
@@ -496,13 +487,7 @@ const team20222023 = [
     linkedin: "https://www.linkedin.com/in/manoj-gore-674907268?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     review: "Being part of the Resonance Racing team is most transformative experiences of my engineering. It provided me with a deep, practical understanding of how theoretical vehicle dynamics translate into real-world performance."
   },
-  {
-    name: "Parag Dhamne",
-    position: "Vehicle Dynamics",
-    image: "n3",
-    linkedin: "https://www.linkedin.com/in/parag-dhamne-6538b8228?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-    review: "Being part of the Resonance Racing Go-kart & REEV team as a member of the Steering and Vehicle Dynamics department was a highly enriching experience. It provided me with practical exposure to design, analysis, and teamwork beyond classroom learning."
-  },
+  
   {
     name: "Gaurang Gujarthi",
     position: "Brakes",
