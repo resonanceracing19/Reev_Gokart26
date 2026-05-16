@@ -278,9 +278,9 @@ function Nav() {
                 transition={{ duration: 0.6, delay: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
               >
                 {[
-                  { icon: "bi-instagram", label: "Instagram" },
-                  { icon: "bi-twitter-x", label: "Twitter" },
-                  { icon: "bi-github", label: "GitHub" },
+                  { icon: "bi-instagram", label: "https://www.instagram.com/resonance_racing_reev_gokart?igsh=MXc5d2U0NmdsbXg3bA==" },
+                  { icon: "bi-youtube", label: "https://www.linkedin.com/company/resonance-racing-gokart/" },
+                  { icon: "bi-linkedin", label: "https://youtube.com/@resonanceracing5031?si=bnSSbyo_5jX5txxj" },
                 ].map((social, index) => (
                   <motion.a
                     key={social.label}
