@@ -129,7 +129,7 @@
    * the unused area will be black instead
    * of cropping the image.
    */
-  background: #000;
+  background: #0b0b0b;
 
   /*
    * Keep card ratio consistent.
