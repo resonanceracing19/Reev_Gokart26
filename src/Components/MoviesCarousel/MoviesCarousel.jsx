@@ -1,4 +1,3 @@
-
 import React, {
   useRef,
   useState,
@@ -8,24 +7,57 @@ import React, {
 
 import "./MoviesCarousel.css";
 
-const MultiCarousel = ({ data = [] }) => {
+const MultiCarousel = ({ data }) => {
+  const movies = data || [];
+
   const containerRef = useRef(null);
   const intervalRef = useRef(null);
+  const resumeTimeoutRef = useRef(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const movies = data;
+  /*
+   * -------------------------------------------------------
+   * GET CURRENT CARD INDEX
+   * -------------------------------------------------------
+   */
+
+  const getCurrentIndex = useCallback(() => {
+    const container = containerRef.current;
+
+    if (!container) return 0;
+
+    const cards = container.querySelectorAll(".card");
+
+    if (!cards.length) return 0;
+
+    const containerLeft = container.scrollLeft;
+
+    let closestIndex = 0;
+    let smallestDifference = Infinity;
+
+    cards.forEach((card, index) => {
+      const difference = Math.abs(
+        card.offsetLeft - containerLeft
+      );
+
+      if (difference < smallestDifference) {
+        smallestDifference = difference;
+        closestIndex = index;
+      }
+    });
+
+    return closestIndex;
+  }, []);
+
 
   /*
-   * Get the exact scroll position of a card.
-   * This is better than calculating:
-   *
-   * cardWidth + gap
-   *
-   * because CSS can change between desktop,
-   * tablet and mobile.
+   * -------------------------------------------------------
+   * SCROLL TO CARD
+   * -------------------------------------------------------
    */
-  const scrollToIndex = useCallback(
+
+  const scrollToCard = useCallback(
     (index, smooth = true) => {
       const container = containerRef.current;
 
@@ -33,204 +65,328 @@ const MultiCarousel = ({ data = [] }) => {
 
       const cards = container.querySelectorAll(".card");
 
-      if (!cards[index]) return;
-
-      const card = cards[index];
+      if (!cards.length) return;
 
       /*
-       * offsetLeft gives us the REAL position of
-       * the card inside the scroll container.
+       * Keep index inside valid range
        */
-      const left = card.offsetLeft;
+      const safeIndex =
+        ((index % cards.length) + cards.length) %
+        cards.length;
+
+      const targetCard = cards[safeIndex];
+
+      if (!targetCard) return;
 
       container.scrollTo({
-        left,
+        left: targetCard.offsetLeft,
         behavior: smooth ? "smooth" : "auto",
       });
 
-      setCurrentIndex(index);
+      setCurrentIndex(safeIndex);
     },
     [movies.length]
   );
 
-  /*
-   * Auto-scroll
-   */
-  const startAutoScroll = useCallback(() => {
-    if (intervalRef.current || movies.length <= 1) {
-      return;
-    }
-
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex((previousIndex) => {
-        const nextIndex =
-          previousIndex >= movies.length - 1
-            ? 0
-            : previousIndex + 1;
-
-        scrollToIndex(nextIndex);
-
-        return nextIndex;
-      });
-    }, 3000);
-  }, [movies.length, scrollToIndex]);
 
   /*
-   * Stop auto-scroll
+   * -------------------------------------------------------
+   * STOP AUTO SCROLL
+   * -------------------------------------------------------
    */
+
   const stopAutoScroll = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
+
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+      resumeTimeoutRef.current = null;
+    }
   }, []);
 
-  /*
-   * Start autoplay when component mounts.
-   */
-  useEffect(() => {
-    startAutoScroll();
-
-    return () => {
-      stopAutoScroll();
-    };
-  }, [startAutoScroll, stopAutoScroll]);
 
   /*
-   * When screen size changes:
-   *
-   * Desktop -> Tablet
-   * Tablet -> Mobile
-   * Mobile -> Desktop
-   *
-   * Recalculate the card position.
+   * -------------------------------------------------------
+   * START AUTO SCROLL
+   * -------------------------------------------------------
    */
-  useEffect(() => {
-    let resizeTimer;
 
-    const handleResize = () => {
-      clearTimeout(resizeTimer);
+  const startAutoScroll = useCallback(() => {
+    if (movies.length <= 1) return;
 
-      resizeTimer = setTimeout(() => {
-        const container = containerRef.current;
+    if (intervalRef.current) return;
 
-        if (!container) return;
+    intervalRef.current = setInterval(() => {
+      const current = getCurrentIndex();
 
-        /*
-         * Reset to first card after responsive
-         * layout changes.
-         */
-        setCurrentIndex(0);
+      const next =
+        current + 1 >= movies.length
+          ? 0
+          : current + 1;
 
-        container.scrollTo({
-          left: 0,
-          behavior: "auto",
-        });
-      }, 150);
-    };
+      scrollToCard(next, true);
+    }, 3000);
+  }, [
+    movies.length,
+    getCurrentIndex,
+    scrollToCard,
+  ]);
 
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      clearTimeout(resizeTimer);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   /*
-   * Detect manual scrolling/swiping.
-   *
-   * This keeps currentIndex synchronized when
-   * the user manually swipes on mobile/tablet.
+   * -------------------------------------------------------
+   * USER STARTS TOUCH / MOUSE DRAG
+   * -------------------------------------------------------
    */
+
+  const handleInteractionStart = useCallback(() => {
+    stopAutoScroll();
+  }, [stopAutoScroll]);
+
+
+  /*
+   * -------------------------------------------------------
+   * USER FINISHES SWIPING
+   * -------------------------------------------------------
+   */
+
+  const handleInteractionEnd = useCallback(() => {
+    const container = containerRef.current;
+
+    if (!container) return;
+
+    /*
+     * Wait until browser finishes snapping
+     */
+    setTimeout(() => {
+      const index = getCurrentIndex();
+
+      setCurrentIndex(index);
+
+      /*
+       * Resume after 4 seconds.
+       *
+       * This gives user enough time to
+       * look at the selected image.
+       */
+      resumeTimeoutRef.current = setTimeout(() => {
+        startAutoScroll();
+      }, 4000);
+    }, 150);
+  }, [
+    getCurrentIndex,
+    startAutoScroll,
+  ]);
+
+
+  /*
+   * -------------------------------------------------------
+   * TRACK MANUAL SCROLL
+   * -------------------------------------------------------
+   */
+
   useEffect(() => {
     const container = containerRef.current;
 
     if (!container) return;
 
-    let scrollTimer;
+    let scrollTimeout;
 
     const handleScroll = () => {
-      clearTimeout(scrollTimer);
+      /*
+       * Whenever user manually scrolls,
+       * stop auto movement.
+       */
+      stopAutoScroll();
 
-      scrollTimer = setTimeout(() => {
-        const cards = container.querySelectorAll(".card");
+      clearTimeout(scrollTimeout);
+
+      scrollTimeout = setTimeout(() => {
+        const index = getCurrentIndex();
+
+        setCurrentIndex(index);
+
+        /*
+         * Restart after user stops scrolling
+         */
+        resumeTimeoutRef.current = setTimeout(() => {
+          startAutoScroll();
+        }, 4000);
+      }, 150);
+    };
+
+    container.addEventListener(
+      "scroll",
+      handleScroll,
+      { passive: true }
+    );
+
+    return () => {
+      container.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+
+      clearTimeout(scrollTimeout);
+    };
+  }, [
+    getCurrentIndex,
+    startAutoScroll,
+    stopAutoScroll,
+  ]);
+
+
+  /*
+   * -------------------------------------------------------
+   * INITIAL AUTO SCROLL
+   * -------------------------------------------------------
+   */
+
+  useEffect(() => {
+    if (movies.length <= 1) return;
+
+    startAutoScroll();
+
+    return () => {
+      stopAutoScroll();
+    };
+  }, [
+    movies.length,
+    startAutoScroll,
+    stopAutoScroll,
+  ]);
+
+
+  /*
+   * -------------------------------------------------------
+   * RESIZE
+   * -------------------------------------------------------
+   */
+
+  useEffect(() => {
+    const handleResize = () => {
+      const container = containerRef.current;
+
+      if (!container) return;
+
+      const index = getCurrentIndex();
+
+      /*
+       * Recalculate position without animation
+       */
+      setTimeout(() => {
+        const cards =
+          container.querySelectorAll(".card");
 
         if (!cards.length) return;
 
-        const scrollLeft = container.scrollLeft;
+        const safeIndex = Math.min(
+          index,
+          cards.length - 1
+        );
 
-        let closestIndex = 0;
-        let smallestDistance = Infinity;
-
-        cards.forEach((card, index) => {
-          const distance = Math.abs(card.offsetLeft - scrollLeft);
-
-          if (distance < smallestDistance) {
-            smallestDistance = distance;
-            closestIndex = index;
-          }
+        container.scrollTo({
+          left: cards[safeIndex].offsetLeft,
+          behavior: "auto",
         });
 
-        setCurrentIndex(closestIndex);
-      }, 80);
+        setCurrentIndex(safeIndex);
+      }, 100);
     };
 
-    container.addEventListener("scroll", handleScroll, {
-      passive: true,
-    });
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
 
     return () => {
-      clearTimeout(scrollTimer);
-      container.removeEventListener("scroll", handleScroll);
+      window.removeEventListener(
+        "resize",
+        handleResize
+      );
     };
-  }, [movies.length]);
+  }, [getCurrentIndex]);
+
+
+  /*
+   * -------------------------------------------------------
+   * EMPTY DATA
+   * -------------------------------------------------------
+   */
 
   if (movies.length === 0) {
     return null;
   }
 
+
+  /*
+   * -------------------------------------------------------
+   * JSX
+   * -------------------------------------------------------
+   */
+
   return (
-    <div
-      className="movies-list"
-      onMouseEnter={stopAutoScroll}
-      onMouseLeave={startAutoScroll}
-    >
+    <div className="movies-list">
+
       <div
         className="card-container"
         ref={containerRef}
+
+        /*
+         * Desktop mouse interaction
+         */
+        onMouseDown={handleInteractionStart}
+        onMouseUp={handleInteractionEnd}
+        onMouseLeave={handleInteractionEnd}
+
+        /*
+         * Mobile touch interaction
+         */
+        onTouchStart={handleInteractionStart}
+        onTouchEnd={handleInteractionEnd}
       >
+
         {movies.map((movie, index) => (
           <div
             className="card"
             key={index}
           >
+
             <img
               src={movie.img}
-              alt={movie.name || `slide-${index + 1}`}
+              alt={
+                movie.name ||
+                `slide-${index + 1}`
+              }
               className="movie-image"
+
               draggable="false"
             />
 
             {movie.name && (
               <div className="card-body">
+
                 <h2 className="name">
                   {movie.name}
                 </h2>
 
-                {movie.des && (
-                  <p className="des">
-                    {movie.des}
-                  </p>
-                )}
+                <p className="des">
+                  {movie.des}
+                </p>
+
               </div>
             )}
+
           </div>
         ))}
+
       </div>
+
     </div>
   );
 };
 
 export default MultiCarousel;
-
