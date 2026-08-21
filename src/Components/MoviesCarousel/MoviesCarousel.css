@@ -1,20 +1,30 @@
 
-/* =====================================================
+/* =========================================================
+   MOVIES / GOKART CAROUSEL
+   Responsive: Desktop + Tablet + Mobile
+   Image: FULLY VISIBLE, NO CROPPING
+   ========================================================= */
+
+
+/* =========================================================
    MAIN CAROUSEL
-   ===================================================== */
+   ========================================================= */
 
 .movies-list {
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+
   position: relative;
+
+  overflow: hidden;
+
   box-sizing: border-box;
 }
 
 
-/* =====================================================
-   CARD CONTAINER
-   ===================================================== */
+/* =========================================================
+   HORIZONTAL CARD CONTAINER
+   ========================================================= */
 
 .card-container {
   width: 100%;
@@ -23,21 +33,16 @@
   display: flex;
   flex-direction: row;
 
+  /*
+   * Desktop gap
+   */
   gap: 50px;
 
+  /*
+   * Horizontal scrolling
+   */
   overflow-x: auto;
   overflow-y: hidden;
-
-  /*
-   * Important for mobile touch scrolling
-   */
-  -webkit-overflow-scrolling: touch;
-
-  /*
-   * Prevent vertical page scrolling from
-   * being affected by horizontal gestures.
-   */
-  touch-action: pan-x;
 
   /*
    * Smooth programmatic scrolling
@@ -45,9 +50,19 @@
   scroll-behavior: smooth;
 
   /*
-   * Snap each card into position
+   * Snap cards into position
    */
   scroll-snap-type: x mandatory;
+
+  /*
+   * Mobile touch scrolling
+   */
+  -webkit-overflow-scrolling: touch;
+
+  /*
+   * Allow horizontal swipe
+   */
+  touch-action: pan-x;
 
   /*
    * Hide scrollbar
@@ -55,99 +70,152 @@
   scrollbar-width: none;
 
   /*
-   * Prevent container from causing
-   * horizontal page overflow
+   * Prevent accidental extra width
    */
   box-sizing: border-box;
 
+  /*
+   * Small vertical spacing
+   */
   padding: 10px 0;
 }
+
+
+/* Chrome / Edge / Safari scrollbar */
 
 .card-container::-webkit-scrollbar {
   display: none;
 }
 
 
-/* =====================================================
+/* =========================================================
    CARD
    DESKTOP
-   ===================================================== */
+   ========================================================= */
 
 .card {
   /*
-   * Your existing desktop design.
-   * DO NOT change this.
+   * Your original desktop card width
    */
   flex: 0 0 43%;
+
+  /*
+   * VERY IMPORTANT
+   */
+  flex-shrink: 0;
 
   min-width: 0;
 
   /*
-   * Prevent shrinking.
-   */
-  flex-shrink: 0;
-
-  /*
-   * Snap card to left side.
+   * Card snaps to start
    */
   scroll-snap-align: start;
 
-  /*
-   * Better snapping behavior.
-   */
   scroll-snap-stop: always;
+
+  /*
+   * Rounded corners
+   */
+  border-radius: 12px;
 
   overflow: hidden;
 
-  border-radius: 12px;
-
   box-sizing: border-box;
+
+  /*
+   * Dark background behind image.
+   *
+   * If image has a slightly different ratio,
+   * the unused area will be black instead
+   * of cropping the image.
+   */
+  background: #000;
+
+  /*
+   * Keep card ratio consistent.
+   *
+   * 16:9 is suitable for landscape
+   * GoKart / event images.
+   */
+  aspect-ratio: 16 / 9;
 }
 
 
-/* =====================================================
+/* =========================================================
    IMAGE
-   ===================================================== */
+   ========================================================= */
 
 .movie-image {
   display: block;
 
+  /*
+   * Fill the card's available area
+   */
   width: 100%;
-  height: auto;
-
-  object-fit: cover;
+  height: 100%;
 
   /*
-   * Prevent image dragging on mobile.
+   * IMPORTANT:
+   *
+   * contain = COMPLETE IMAGE VISIBLE
+   *
+   * No crop
+   * No stretching
+   * Original aspect ratio preserved
+   */
+  object-fit: contain;
+
+  /*
+   * Keep image centered
+   */
+  object-position: center center;
+
+  /*
+   * Prevent accidental dragging
    */
   user-select: none;
+
   -webkit-user-drag: none;
+
+  /*
+   * Prevent weird inline-image spacing
+   */
+  vertical-align: middle;
 }
 
 
-/* =====================================================
+/* =========================================================
    CARD BODY
-   ===================================================== */
+   ========================================================= */
 
 .card-body {
   padding: 10px 0;
+  box-sizing: border-box;
 }
+
 
 .name {
   margin: 0;
+
   font-size: 22px;
+
+  line-height: 1.2;
 }
+
 
 .des {
   margin-top: 5px;
+
   font-size: 15px;
+
+  line-height: 1.4;
 }
 
 
-/* =====================================================
+/* =========================================================
    TABLET
    768px - 1024px
-   ===================================================== */
+   ========================================================= */
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
@@ -155,43 +223,66 @@
     width: 100%;
   }
 
+
   .card-container {
+
     /*
      * Smaller gap than desktop
      */
     gap: 30px;
 
     /*
-     * Small side padding
+     * Small horizontal padding
      */
     padding: 10px 16px;
   }
 
+
   .card {
+
     /*
-     * Two cards approximately visible.
-     *
-     * 46% + 46% + gap
-     * works well for tablet.
+     * Approximately 2 cards visible
      */
     flex: 0 0 46%;
+
+    /*
+     * Keep image/card ratio
+     */
+    aspect-ratio: 16 / 9;
   }
+
+
+  .movie-image {
+
+    width: 100%;
+    height: 100%;
+
+    /*
+     * Complete image
+     */
+    object-fit: contain;
+
+    object-position: center;
+  }
+
 
   .name {
     font-size: 20px;
   }
 
+
   .des {
     font-size: 14px;
+
     line-height: 1.4;
   }
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
    481px - 767px
-   ===================================================== */
+   ========================================================= */
 
 @media (min-width: 481px) and (max-width: 767px) {
 
@@ -199,7 +290,12 @@
     width: 100%;
   }
 
+
   .card-container {
+
+    /*
+     * Mobile gap
+     */
     gap: 18px;
 
     /*
@@ -208,42 +304,62 @@
     padding: 10px 16px;
 
     /*
-     * Strong touch scrolling
+     * Enable snapping
      */
     scroll-snap-type: x mandatory;
   }
 
+
   .card {
+
     /*
-     * One card + part of next card.
+     * One large card + part of next card
      */
     flex: 0 0 82%;
+
+    /*
+     * Same ratio
+     */
+    aspect-ratio: 16 / 9;
   }
 
+
   .movie-image {
+
     width: 100%;
-    height: auto;
+    height: 100%;
+
+    /*
+     * NEVER CROP
+     */
+    object-fit: contain;
+
+    object-position: center;
   }
+
 
   .card-body {
     padding: 8px 2px;
   }
 
+
   .name {
     font-size: 19px;
   }
 
+
   .des {
     font-size: 13px;
+
     line-height: 1.4;
   }
 }
 
 
-/* =====================================================
+/* =========================================================
    SMALL MOBILE
    320px - 480px
-   ===================================================== */
+   ========================================================= */
 
 @media (max-width: 480px) {
 
@@ -251,83 +367,136 @@
     width: 100%;
   }
 
+
   .card-container {
+
     /*
-     * Small gap
+     * Smaller gap
      */
     gap: 14px;
 
     /*
-     * Important:
-     * Do NOT use huge horizontal padding.
+     * Small side padding
      */
     padding: 8px 12px;
 
     /*
-     * Native mobile scrolling
+     * Touch scrolling
      */
     overflow-x: auto;
 
     scroll-snap-type: x mandatory;
 
-    /*
-     * Prevent accidental vertical scroll locking.
-     */
+    -webkit-overflow-scrolling: touch;
+
     touch-action: pan-x;
   }
 
+
   .card {
+
     /*
-     * One large card with
-     * a visible portion of next card.
+     * Almost one complete card
+     * + small part of next card
      */
     flex: 0 0 88%;
+
+    /*
+     * Maintain image ratio
+     */
+    aspect-ratio: 16 / 9;
   }
+
 
   .movie-image {
-    width: 100%;
-    height: auto;
 
-    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    /*
+     * Complete image visible
+     */
+    object-fit: contain;
+
+    object-position: center center;
   }
+
 
   .card-body {
     padding: 8px 2px;
   }
 
+
   .name {
     font-size: 17px;
+
+    line-height: 1.2;
   }
+
 
   .des {
     font-size: 12px;
+
     line-height: 1.4;
   }
 }
 
 
-/* =====================================================
-   VERY SMALL DEVICES
+/* =========================================================
+   VERY SMALL MOBILE
    Below 360px
-   ===================================================== */
+   ========================================================= */
 
 @media (max-width: 360px) {
 
   .card-container {
+
     gap: 12px;
+
     padding: 8px 10px;
   }
 
+
   .card {
+
+    /*
+     * Slightly wider on very small screens
+     */
     flex: 0 0 90%;
+
+    aspect-ratio: 16 / 9;
   }
+
+
+  .movie-image {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+  }
+
 
   .name {
     font-size: 16px;
   }
+
 
   .des {
     font-size: 12px;
   }
 }
 
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .card-container {
+    scroll-behavior: auto;
+  }
+}
