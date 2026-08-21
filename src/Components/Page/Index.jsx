@@ -231,7 +231,7 @@ export default function Index() {
         />
 
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-[#101010] z-0"></div>
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
 
         <div className="relative z-10 text-center text-white px-4">
           <motion.h1
