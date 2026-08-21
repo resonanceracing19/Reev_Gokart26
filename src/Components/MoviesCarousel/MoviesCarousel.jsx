@@ -3,34 +3,53 @@ import "./MoviesCarousel.css";
 
 const MultiCarousel = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const containerRef = useRef(null);
   const intervalRef = useRef(null);
 
   const movies = data || [];
 
-  const scrollTo = useCallback((index) => {
-    const container = containerRef.current;
-    if (container && movies.length > 0) {
-      // Aapke CSS mein card ki width min-width: 43% hai + gap: 50px
-      // Isliye clientWidth use karna best hai dynamic scrolling ke liye
-      const scrollAmount = container.clientWidth / 2; 
+  const scrollTo = useCallback(
+    (index) => {
+      const container = containerRef.current;
+
+      if (!container || movies.length === 0) return;
+
+      const card = container.querySelector(".card");
+
+      if (!card) return;
+
+      // Get actual card width
+      const cardWidth = card.offsetWidth;
+
+      // Get actual gap from CSS
+      const styles = window.getComputedStyle(container);
+      const gap = parseFloat(styles.columnGap || styles.gap || 0);
+
+      const scrollAmount = cardWidth + gap;
+
       container.scrollTo({
         left: index * scrollAmount,
         behavior: "smooth",
       });
-    }
-    setCurrentIndex(index);
-  }, [movies.length]);
+
+      setCurrentIndex(index);
+    },
+    [movies.length]
+  );
 
   const startAutoScroll = useCallback(() => {
-    if (intervalRef.current || movies.length === 0) return;
+    if (intervalRef.current || movies.length <= 1) return;
+
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => {
         const nextIndex = (prev + 1) % movies.length;
+
         scrollTo(nextIndex);
+
         return nextIndex;
       });
-    }, 3000); // 3 seconds interval
+    }, 3000);
   }, [movies.length, scrollTo]);
 
   const stopAutoScroll = useCallback(() => {
@@ -42,25 +61,51 @@ const MultiCarousel = ({ data }) => {
 
   useEffect(() => {
     startAutoScroll();
-    return () => stopAutoScroll();
+
+    return () => {
+      stopAutoScroll();
+    };
   }, [startAutoScroll, stopAutoScroll]);
+
+  // Reset carousel when screen size changes
+  useEffect(() => {
+    const handleResize = () => {
+      const container = containerRef.current;
+
+      if (container) {
+        container.scrollTo({
+          left: 0,
+          behavior: "auto",
+        });
+      }
+
+      setCurrentIndex(0);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   if (movies.length === 0) return null;
 
   return (
-    <div 
-      className="movies-list" 
-      onMouseEnter={stopAutoScroll} 
+    <div
+      className="movies-list"
+      onMouseEnter={stopAutoScroll}
       onMouseLeave={startAutoScroll}
     >
       <div className="card-container" ref={containerRef}>
         {movies.map((m, idx) => (
           <div className="card" key={idx}>
-            <img 
-              src={m.img} 
-              alt={`slide-${idx}`} 
-              className="" 
+            <img
+              src={m.img}
+              alt={m.name || `slide-${idx}`}
+              className="movie-image"
             />
+
             {m.name && (
               <div className="card-body">
                 <h2 className="name">{m.name}</h2>
@@ -70,8 +115,6 @@ const MultiCarousel = ({ data }) => {
           </div>
         ))}
       </div>
-
-      
     </div>
   );
 };
