@@ -1,118 +1,1073 @@
-/* --- Timeline Container --- */
+
+/* =========================================================
+   GOKART PAGE
+   ========================================================= */
+
+.gokart-container {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #0b0b0b;
+
+  overflow-x: hidden;
+}
+
+.flex-grow {
+  width: 100%;
+}
+
+
+/* =========================================================
+   ABOUT GOKART HEADING
+   ========================================================= */
+
+.Ashish {
+  width: 100%;
+  background: #0b0b0b;
+}
+
+.Jointe {
+  width: 100%;
+}
+
+.section-heading {
+  color: white;
+
+  font-size: clamp(28px, 5vw, 55px);
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+   ========================================================= */
+
+.about {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 80px 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 70px;
+
+  box-sizing: border-box;
+}
+
+.about-img {
+  width: 45%;
+
+  max-width: 600px;
+
+  height: auto;
+
+  border-radius: 15px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+.about-text {
+  width: 50%;
+
+  max-width: 650px;
+}
+
+.about-text h2 {
+  margin-left: 0 !important;
+
+  color: white;
+}
+
+.about-text p {
+  margin-left: 0 !important;
+
+  color: #d1d1d1;
+}
+
+
+/* =========================================================
+   TIMELINE CONTAINER
+   ========================================================= */
+
 .timeline-container {
   position: relative;
-  padding: 80px 20px;
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 100px 40px 120px;
+
   background: #0b0b0b;
+
   overflow: hidden;
+
+  box-sizing: border-box;
 }
+
+
+/* =========================================================
+   TIMELINE HEADER
+   ========================================================= */
 
 .timeline-header-box {
   position: relative;
+
   z-index: 10;
+
   width: fit-content;
-  margin: 0 auto 60px auto;
+
+  margin: 0 auto 100px auto;
+
   background: #ff0000;
-  padding: 10px 25px;
+
+  padding: 12px 30px;
+
   border-radius: 50px;
+
   color: white;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+
+  box-shadow:
+    0 0 20px rgba(255, 0, 0, 0.5);
+
   text-align: center;
+
+  box-sizing: border-box;
 }
 
-/* --- The Line --- */
+.timeline-header-box h2 {
+  margin: 0;
+
+  font-size: 42px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CENTRAL TIMELINE LINE
+   ========================================================= */
+
 .central-line {
   position: absolute;
+
   left: 50%;
-  top: 150px;
-  bottom: 50px;
+
+  top: 190px;
+
+  bottom: 100px;
+
   width: 4px;
-  background: linear-gradient(to bottom, #ff0000, #330000);
+
+  background: linear-gradient(
+    to bottom,
+    #ff0000,
+    #ff0000 70%,
+    #330000
+  );
+
   transform: translateX(-50%);
+
+  z-index: 1;
 }
+
+
+/* =========================================================
+   MOVING BALL
+   ========================================================= */
 
 .moving-ball {
   position: absolute;
+
   left: 50%;
-  width: 15px;
-  height: 15px;
-  background: rgb(255, 0, 0);
+
+  width: 16px;
+
+  height: 16px;
+
+  background: #ff0000;
+
   border: 2px solid #ff0000;
+
   border-radius: 50%;
-  transform: translate(-0%, -0%);
-  box-shadow: 0 0 10px #ff0000;
+
+  transform: translateX(-50%);
+
+  box-shadow:
+    0 0 10px #ff0000,
+    0 0 20px rgba(255, 0, 0, 0.5);
+
   z-index: 20;
 }
 
-/* --- Timeline Items --- */
+
+/* =========================================================
+   EVENTS WRAPPER
+   ========================================================= */
+
 .events-wrapper {
   position: relative;
+
+  width: 100%;
+
   max-width: 1200px;
+
   margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 70px;
+
+  z-index: 2;
 }
+
+
+/* =========================================================
+   TIMELINE ITEM
+   ========================================================= */
 
 .timeline-item {
   position: relative;
+
   width: 50%;
-  margin-bottom: 60px;
+
+  margin-bottom: 0;
+
   display: flex;
-  justify-content: center;
+
+  box-sizing: border-box;
 }
+
+
+/* LEFT ITEM */
 
 .timeline-item.left-item {
   left: 0;
-  padding-right: 40px;
+
+  justify-content: flex-end;
+
+  padding-right: 45px;
 }
+
+
+/* RIGHT ITEM */
 
 .timeline-item.right-item {
   left: 50%;
-  padding-left: 40px;
+
+  justify-content: flex-start;
+
+  padding-left: 45px;
 }
 
+
+/* =========================================================
+   TIMELINE CONTENT
+   ========================================================= */
+
 .timeline-content {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 0, 0, 0.2);
   width: 100%;
-  transition: transform 0.3s ease;
+
+  max-width: 520px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  padding: 22px;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(255, 0, 0, 0.2);
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .timeline-content:hover {
-  transform: scale(1.02);
+  transform: translateY(-5px);
+
   border-color: #ff0000;
+
+  box-shadow:
+    0 10px 30px rgba(255, 0, 0, 0.15);
 }
+
+
+/* =========================================================
+   TIMELINE IMAGE
+   ========================================================= */
+
+.image-box {
+  width: 100%;
+
+  margin-top: 18px;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  background: #111;
+
+  /*
+   * Landscape image area
+   */
+  aspect-ratio: 16 / 9;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
 
 .timeline-img {
+  display: block;
+
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 15px;
-  object-fit: cover;
+
+  height: 100%;
+
+  /*
+   * FULL IMAGE VISIBLE
+   * NO CROPPING
+   */
+  object-fit: contain;
+
+  object-position: center;
+
+  background: #111;
 }
 
-.season-year { color: #ff0000; font-weight: 800; font-size: 1.5rem; }
-.captain-name { color: #ffffff; margin: 5px 0; font-size: 1.4rem; }
-.event-title { color: #c3bdbd; font-size: 1.1rem; }
 
-/* --- Responsive Breakpoint (Mobile) --- */
-@media (max-width: 768px) {
-  .central-line {
-    left: 20px; /* Move line to the left */
-  }
-  
-  .moving-ball {
-    left: 13px;
+/* =========================================================
+   TIMELINE TEXT
+   ========================================================= */
+
+.season-year {
+  margin: 0;
+
+  color: #ff0000;
+
+  font-weight: 800;
+
+  font-size: 1.5rem;
+
+  line-height: 1.3;
+
+  letter-spacing: 0.5px;
+}
+
+
+.captain-name {
+  color: #ffffff;
+
+  margin: 7px 0;
+
+  font-size: 1.15rem;
+
+  line-height: 1.4;
+}
+
+
+.event-title {
+  color: #c3bdbd;
+
+  margin: 0;
+
+  font-size: 1.05rem;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TIMELINE DOT
+   ========================================================= */
+
+.timeline-dot {
+  position: absolute;
+
+  top: 50%;
+
+  width: 17px;
+
+  height: 17px;
+
+  background: #0b0b0b;
+
+  border: 3px solid #ff0000;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 10px #ff0000,
+    0 0 20px rgba(255, 0, 0, 0.5);
+
+  transform: translateY(-50%);
+
+  z-index: 10;
+}
+
+
+/* LEFT DOT */
+
+.left-item .timeline-dot {
+  right: -8px;
+}
+
+
+/* RIGHT DOT */
+
+.right-item .timeline-dot {
+  left: -8px;
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 1024px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .about {
+    padding: 70px 30px;
+
+    gap: 40px;
   }
 
-  .timeline-item {
-    width: 100%;
-    left: 0 !important;
-    padding-left: 50px !important; /* Space for the line */
-    padding-right: 0 !important;
+
+  .about-img {
+    width: 45%;
   }
+
+
+  .about-text {
+    width: 55%;
+  }
+
+
+  .timeline-container {
+    padding: 80px 25px 100px;
+  }
+
 
   .timeline-header-box {
-    margin-left: 0;
+    margin-bottom: 80px;
+
+    padding: 10px 25px;
+  }
+
+
+  .timeline-header-box h2 {
+    font-size: 34px;
+  }
+
+
+  .central-line {
+    top: 160px;
+
+    bottom: 80px;
+  }
+
+
+  .events-wrapper {
+    max-width: 900px;
+
+    gap: 55px;
+  }
+
+
+  .timeline-item.left-item {
+    padding-right: 30px;
+  }
+
+
+  .timeline-item.right-item {
+    padding-left: 30px;
+  }
+
+
+  .timeline-content {
+    max-width: 430px;
+
+    padding: 18px;
+  }
+
+
+  .season-year {
+    font-size: 1.25rem;
+  }
+
+
+  .captain-name {
+    font-size: 1rem;
+  }
+
+
+  .event-title {
+    font-size: 0.95rem;
+  }
+
+
+  .timeline-dot {
+    width: 15px;
+
+    height: 15px;
+  }
+
+
+  .left-item .timeline-dot {
+    right: -7px;
+  }
+
+
+  .right-item .timeline-dot {
+    left: -7px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   BELOW 767px
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* -------------------------------------------------------
+     ABOUT SECTION
+     ------------------------------------------------------- */
+
+  .about {
+    width: 100%;
+
+    padding: 50px 20px 70px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+
+    box-sizing: border-box;
+  }
+
+
+  .about-img {
+    width: 100%;
+
+    max-width: 650px;
+
+    height: auto;
+
+    margin: 0 auto;
+  }
+
+
+  .about-text {
+    width: 100%;
+
+    max-width: none;
+
+    text-align: left;
+  }
+
+
+  .about-text h2 {
+    font-size: 36px !important;
+
+    margin-left: 0 !important;
+  }
+
+
+  .about-text p {
+    margin-left: 0 !important;
+
+    font-size: 16px !important;
+
+    line-height: 1.7;
+
+    max-width: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     TIMELINE CONTAINER
+     ------------------------------------------------------- */
+
+  .timeline-container {
+
+    /*
+     * FULL WIDTH
+     */
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    /*
+     * Larger vertical spacing
+     */
+    padding: 65px 15px 90px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+  }
+
+
+  /* -------------------------------------------------------
+     HEADER
+     ------------------------------------------------------- */
+
+  .timeline-header-box {
+
+    width: fit-content;
+
+    max-width: calc(100% - 20px);
+
+    margin: 0 auto 65px auto;
+
+    padding: 10px 22px;
+
+    border-radius: 40px;
+  }
+
+
+  .timeline-header-box h2 {
+
+    font-size: clamp(25px, 7vw, 34px);
+
+    white-space: nowrap;
+  }
+
+
+  /* -------------------------------------------------------
+     MOVE LINE TO LEFT
+     ------------------------------------------------------- */
+
+  .central-line {
+
+    left: 24px;
+
+    top: 145px;
+
+    bottom: 70px;
+
+    width: 3px;
+
+    transform: none;
+  }
+
+
+  /* -------------------------------------------------------
+     MOVING BALL
+     ------------------------------------------------------- */
+
+  .moving-ball {
+
+    left: 50%;
+
+    width: 14px;
+
+    height: 14px;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+      0 0 8px #ff0000,
+      0 0 15px rgba(255, 0, 0, 0.5);
+  }
+
+
+  /* -------------------------------------------------------
+     EVENTS
+     ------------------------------------------------------- */
+
+  .events-wrapper {
+
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding-left: 35px;
+
+    box-sizing: border-box;
+
+    gap: 45px;
+  }
+
+
+  /* -------------------------------------------------------
+     RESET DESKTOP LEFT / RIGHT
+     ------------------------------------------------------- */
+
+  .timeline-item,
+  .timeline-item.left-item,
+  .timeline-item.right-item {
+
+    width: 100%;
+
+    left: 0 !important;
+
+    right: auto !important;
+
+    padding: 0 !important;
+
+    margin: 0;
+
+    display: block;
+
+    box-sizing: border-box;
+  }
+
+
+  /* -------------------------------------------------------
+     TIMELINE CONTENT
+     ------------------------------------------------------- */
+
+  .timeline-content {
+
+    width: 100%;
+
+    max-width: none;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    box-sizing: border-box;
+
+    /*
+     * Mobile card should be LARGE
+     */
+    min-height: 0;
+  }
+
+
+  /* -------------------------------------------------------
+     IMAGE
+     ------------------------------------------------------- */
+
+  .image-box {
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    /*
+     * Bigger mobile image
+     */
+    aspect-ratio: 16 / 10;
+
+    border-radius: 10px;
+  }
+
+
+  .timeline-img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: #111;
+  }
+
+
+  /* -------------------------------------------------------
+     TEXT
+     ------------------------------------------------------- */
+
+  .season-year {
+
+    font-size: 1.25rem;
+
+    line-height: 1.3;
+  }
+
+
+  .captain-name {
+
+    font-size: 1rem;
+
+    margin: 7px 0;
+  }
+
+
+  .event-title {
+
+    font-size: 0.95rem;
+
+    line-height: 1.45;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE DOT
+     ------------------------------------------------------- */
+
+  .timeline-dot {
+
+    left: -18px !important;
+
+    right: auto !important;
+
+    top: 25px;
+
+    width: 14px;
+
+    height: 14px;
+
+    transform: translateX(-50%);
+
+    border-width: 2px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   BELOW 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .about {
+    padding: 40px 15px 60px;
+
+    gap: 28px;
+  }
+
+
+  .about-text h2 {
+    font-size: 30px !important;
+  }
+
+
+  .about-text p {
+    font-size: 15px !important;
+
+    line-height: 1.65;
+  }
+
+
+  /* -------------------------------------------------------
+     TIMELINE
+     ------------------------------------------------------- */
+
+  .timeline-container {
+
+    padding: 55px 10px 80px;
+  }
+
+
+  .timeline-header-box {
+
+    margin-bottom: 55px;
+
+    padding: 9px 18px;
+  }
+
+
+  .timeline-header-box h2 {
+
+    font-size: 25px;
+  }
+
+
+  .central-line {
+
+    left: 20px;
+
+    top: 130px;
+
+    bottom: 60px;
+
+    width: 3px;
+  }
+
+
+  .events-wrapper {
+
+    padding-left: 30px;
+
+    gap: 40px;
+  }
+
+
+  .timeline-content {
+
+    padding: 16px;
+
+    border-radius: 12px;
+  }
+
+
+  .image-box {
+
+    aspect-ratio: 16 / 10;
+
+    margin-top: 14px;
+  }
+
+
+  .season-year {
+
+    font-size: 1.1rem;
+  }
+
+
+  .captain-name {
+
     font-size: 0.9rem;
+  }
+
+
+  .event-title {
+
+    font-size: 0.85rem;
+  }
+
+
+  .timeline-dot {
+
+    left: -16px !important;
+
+    top: 22px;
+
+    width: 12px;
+
+    height: 12px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   BELOW 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .timeline-container {
+
+    padding-left: 8px;
+
+    padding-right: 8px;
+  }
+
+
+  .timeline-header-box {
+
+    padding: 8px 15px;
+  }
+
+
+  .timeline-header-box h2 {
+
+    font-size: 22px;
+  }
+
+
+  .central-line {
+
+    left: 18px;
+
+    top: 120px;
+  }
+
+
+  .events-wrapper {
+
+    padding-left: 27px;
+
+    gap: 35px;
+  }
+
+
+  .timeline-content {
+
+    padding: 14px;
+  }
+
+
+  .season-year {
+
+    font-size: 1rem;
+  }
+
+
+  .captain-name {
+
+    font-size: 0.85rem;
+  }
+
+
+  .event-title {
+
+    font-size: 0.8rem;
+  }
+
+
+  .timeline-dot {
+
+    left: -15px !important;
+
+    width: 11px;
+
+    height: 11px;
+  }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .timeline-container *,
+  .timeline-container *::before,
+  .timeline-container *::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
   }
 }
