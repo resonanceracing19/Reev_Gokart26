@@ -1,21 +1,64 @@
+
+/* =====================================================
+   MAIN CAROUSEL
+   ===================================================== */
+
 .movies-list {
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
 }
+
+
+/* =====================================================
+   CARD CONTAINER
+   ===================================================== */
 
 .card-container {
   width: 100%;
+  max-width: 100%;
+
   display: flex;
+  flex-direction: row;
+
   gap: 50px;
 
   overflow-x: auto;
   overflow-y: hidden;
 
+  /*
+   * Important for mobile touch scrolling
+   */
+  -webkit-overflow-scrolling: touch;
+
+  /*
+   * Prevent vertical page scrolling from
+   * being affected by horizontal gestures.
+   */
+  touch-action: pan-x;
+
+  /*
+   * Smooth programmatic scrolling
+   */
   scroll-behavior: smooth;
+
+  /*
+   * Snap each card into position
+   */
   scroll-snap-type: x mandatory;
 
+  /*
+   * Hide scrollbar
+   */
   scrollbar-width: none;
+
+  /*
+   * Prevent container from causing
+   * horizontal page overflow
+   */
+  box-sizing: border-box;
 
   padding: 10px 0;
 }
@@ -24,29 +67,67 @@
   display: none;
 }
 
-/* =========================
+
+/* =====================================================
+   CARD
    DESKTOP
-   ========================= */
+   ===================================================== */
 
 .card {
+  /*
+   * Your existing desktop design.
+   * DO NOT change this.
+   */
   flex: 0 0 43%;
+
   min-width: 0;
 
+  /*
+   * Prevent shrinking.
+   */
+  flex-shrink: 0;
+
+  /*
+   * Snap card to left side.
+   */
   scroll-snap-align: start;
 
+  /*
+   * Better snapping behavior.
+   */
+  scroll-snap-stop: always;
+
   overflow: hidden;
+
   border-radius: 12px;
 
   box-sizing: border-box;
 }
 
+
+/* =====================================================
+   IMAGE
+   ===================================================== */
+
 .movie-image {
+  display: block;
+
   width: 100%;
   height: auto;
 
-  display: block;
   object-fit: cover;
+
+  /*
+   * Prevent image dragging on mobile.
+   */
+  user-select: none;
+  -webkit-user-drag: none;
 }
+
+
+/* =====================================================
+   CARD BODY
+   ===================================================== */
 
 .card-body {
   padding: 10px 0;
@@ -63,19 +144,36 @@
 }
 
 
-/* =========================
+/* =====================================================
    TABLET
    768px - 1024px
-   ========================= */
+   ===================================================== */
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .movies-list {
+    width: 100%;
+  }
 
   .card-container {
+    /*
+     * Smaller gap than desktop
+     */
     gap: 30px;
-    padding: 10px 5px;
+
+    /*
+     * Small side padding
+     */
+    padding: 10px 16px;
   }
 
   .card {
+    /*
+     * Two cards approximately visible.
+     *
+     * 46% + 46% + gap
+     * works well for tablet.
+     */
     flex: 0 0 46%;
   }
 
@@ -85,34 +183,105 @@
 
   .des {
     font-size: 14px;
+    line-height: 1.4;
   }
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-   Below 768px
-   ========================= */
+   481px - 767px
+   ===================================================== */
 
-@media (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .movies-list {
+    width: 100%;
+  }
 
   .card-container {
-    gap: 16px;
+    gap: 18px;
 
-    padding: 10px 12px;
+    /*
+     * Side spacing
+     */
+    padding: 10px 16px;
 
+    /*
+     * Strong touch scrolling
+     */
     scroll-snap-type: x mandatory;
-
-    /* Important for touch scrolling */
-    -webkit-overflow-scrolling: touch;
   }
 
   .card {
     /*
-      Show approximately one card
-      + a little part of next card
-    */
+     * One card + part of next card.
+     */
     flex: 0 0 82%;
+  }
+
+  .movie-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-body {
+    padding: 8px 2px;
+  }
+
+  .name {
+    font-size: 19px;
+  }
+
+  .des {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   320px - 480px
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+  .movies-list {
+    width: 100%;
+  }
+
+  .card-container {
+    /*
+     * Small gap
+     */
+    gap: 14px;
+
+    /*
+     * Important:
+     * Do NOT use huge horizontal padding.
+     */
+    padding: 8px 12px;
+
+    /*
+     * Native mobile scrolling
+     */
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    /*
+     * Prevent accidental vertical scroll locking.
+     */
+    touch-action: pan-x;
+  }
+
+  .card {
+    /*
+     * One large card with
+     * a visible portion of next card.
+     */
+    flex: 0 0 88%;
   }
 
   .movie-image {
@@ -127,37 +296,38 @@
   }
 
   .name {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .des {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.4;
   }
 }
 
 
-/* =========================
-   SMALL MOBILE
-   Below 480px
-   ========================= */
+/* =====================================================
+   VERY SMALL DEVICES
+   Below 360px
+   ===================================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
 
   .card-container {
-    gap: 14px;
+    gap: 12px;
     padding: 8px 10px;
   }
 
   .card {
-    flex: 0 0 88%;
+    flex: 0 0 90%;
   }
 
   .name {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .des {
     font-size: 12px;
   }
 }
+
