@@ -102,7 +102,10 @@
   .moving-ball {
     left: 13px;
   }
-
+.events-wrapper {
+  width: 100%;
+  padding-left: 35px;
+}
 .timeline-item.left-item,
 .timeline-item.right-item {
   width: 100%;
