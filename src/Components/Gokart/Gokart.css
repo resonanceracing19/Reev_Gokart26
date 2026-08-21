@@ -45,9 +45,8 @@
 
 /* --- Timeline Items --- */
 .events-wrapper {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  padding-left: 35px;
 }
 
 .timeline-item {
@@ -104,13 +103,12 @@
     left: 13px;
   }
 
-  .timeline-item {
-    width: 100%;
-    left: 0 !important;
-    padding-left: 50px !important; /* Space for the line */
-    padding-right: 0 !important;
-  }
-
+.timeline-item.left-item,
+.timeline-item.right-item {
+  width: 100%;
+  left: 0 !important;
+  padding: 0 !important;
+}
   .timeline-header-box {
     margin-left: 0;
     font-size: 0.9rem;
